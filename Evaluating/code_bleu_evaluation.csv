@@ -1,4 +1,4 @@
-index,after_merge,before_merge,secure_results_codeT5,optimized_results_codeT5,secure_results_T5,optimized_results_T5,secure_from_codeT5_recommendations,optimize_from_codeT5_recommendations,secure_from_T5_recommendations,optimize_from_T5_recommendations,codeT5_secure_after_score,codeT5_optimize_after_score,T5_secure_after_score,T5_optimize_after_score,codeT5_secure_before_score,codeT5_optimize_before_score,T5_secure_before_score,codeT5_optimize_before_score
+index,after_merge,before_merge,secure_results_codeT5,optimized_results_codeT5,secure_results_T5,optimized_results_T5,secure_from_codeT5_recommendations,optimize_from_codeT5_recommendations,secure_from_T5_recommendations,optimize_from_T5_recommendations,codeT5_secure_after_score,codeT5_optimize_after_score,T5_secure_after_score,T5_optimize_after_score,codeT5_secure_before_score,codeT5_optimize_before_score,T5_secure_before_score,T5_optimize_before_score
 0,"def cmdb_get_mainline_object_topo(request, bk_biz_id, bk_supplier_account=''):
     """"""
     @summary: 获取配置平台业务拓扑模型
@@ -180,7 +180,7 @@ def cmdb_get_mainline_object_topo(request, bk_biz_id, bk_supplier_account=''):
             bk_obj['bk_obj_name'] = 'IP'
     result = {'result': cc_result['result'], 'code': cc_result['code'], 'data': cc_result['data']}
     return json.dumps(result)
-```",0.7427342566537528,0.6479704942443436,0.8318473020140085,0.7522549635177683,0.8346951598280693,0.9198532045761613,0.7210981212863555,0.9198532045761613
+```",0.7427342566537528,0.6479704942443436,0.8318473020140085,0.7522549635177683,0.8346951598280693,0.7224909654277389,0.7210981212863555,0.9198532045761613
 1,"def cc_search_object_attribute(request, obj_id, biz_cc_id, supplier_account):
     """"""
     @summary: 获取对象自定义属性
@@ -368,7 +368,7 @@ def cc_search_object_attribute(request, obj_id, biz_cc_id, supplier_account):
         'bk_supplier_account': supplier_account
     }
     return JsonResponse({'result': True, 'data': obj.search_object_attribute(kwargs)})
-```",0.7008405879853534,0.7410723031384232,0.7777869606718891,0.29697911997683946,0.8196377901976523,0.2998279227732141,0.9571406863271859,0.2998279227732141
+```",0.7008405879853534,0.7410723031384232,0.7777869606718891,0.29697911997683946,0.8196377901976523,0.8484243288761277,0.9571406863271859,0.2998279227732141
 2,"def cc_search_create_object_attribute(request, obj_id, biz_cc_id, supplier_account):
     client = get_client_by_user(request.user.username)
     kwargs = {
@@ -619,7 +619,7 @@ def cc_search_create_object_attribute(request, obj_id, biz_cc_id, supplier_accou
             obj_property.append(prop_dict)
 
     return JsonResponse({'result': True, 'data': obj_property})
-```",0.7910466577836862,0.7624743962445432,0.7260343298552965,0.7903589234179352,0.9655573006804947,0.9645479430704718,0.7497704852128725,0.9645479430704718
+```",0.7910466577836862,0.7624743962445432,0.7260343298552965,0.7903589234179352,0.9655573006804947,0.8633435277136751,0.7497704852128725,0.9645479430704718
 3,"def cc_search_topo(request, obj_id, category, biz_cc_id, supplier_account):
     """"""
     @summary: 查询对象拓扑
@@ -820,7 +820,7 @@ def cc_search_topo(request, obj_id, category, biz_cc_id, supplier_account):
         return JsonResponse({'result': True, 'data': cc_topo})
 
     return cc_format_topo_data(cc_result['data'], obj_id, category)
-```",0.7335051383770942,0.6320223737416186,0.7260765058809289,0.7416268759704902,0.8029649619328627,0.8659115038196317,0.7566915617572936,0.8659115038196317
+```",0.7335051383770942,0.6320223737416186,0.7260765058809289,0.7416268759704902,0.8029649619328627,0.7325546432659518,0.7566915617572936,0.8659115038196317
 4,"def job_get_script_list(request, biz_cc_id):
     """"""
     查询业务脚本列表
@@ -1048,7 +1048,7 @@ def job_get_script_list(request, biz_cc_id):
         })
 
     return JsonResponse({'result': True, 'data': version_data})
-```",0.808554872763414,0.5912454818680337,0.8025269948843756,0.8053608097817371,0.9633983853293948,0.9464693001136477,0.8989083119956145,0.9464693001136477
+```",0.808554872763414,0.5912454818680337,0.8025269948843756,0.8053608097817371,0.9633983853293948,0.6783327685034919,0.8989083119956145,0.9464693001136477
 5,"def job_get_job_tasks_by_biz(request, biz_cc_id):
     client = get_client_by_user(request.user.username)
     job_result = client.job.get_job_list({'bk_biz_id': biz_cc_id})
@@ -1272,7 +1272,7 @@ def job_get_job_tasks_by_biz(request, biz_cc_id):
             'text': task['name'],
         })
     return JsonResponse({'result': True, 'data': task_list})
-```",0.7949595907551007,0.6718193608299304,0.5697383393495269,0.7279942931826083,0.9871823087046622,0.8780879295315472,0.6040180616226372,0.8780879295315472
+```",0.7949595907551007,0.6718193608299304,0.5697383393495269,0.7279942931826083,0.9871823087046622,0.8037183781298957,0.6040180616226372,0.8780879295315472
 6,"def job_get_job_task_detail(request, biz_cc_id, task_id):
     client = get_client_by_user(request.user.username)
     job_result = client.job.get_job_detail({'bk_biz_id': biz_cc_id,
@@ -1603,7 +1603,7 @@ def job_get_job_task_detail(request, biz_cc_id, task_id):
             'type_name': job_step_type_name.get(info['type'], info['type'])
         })
     return JsonResponse({'result': True, 'data': {'global_var': global_var, 'steps': steps}})
-```",0.8091929102565147,0.7919199301848797,0.7217502212062844,0.8089527023914131,0.9802679328310604,0.9789975339170169,0.7571079272397094,0.9789975339170169
+```",0.8161373547009592,0.7988643746293241,0.7194354063914695,0.8158971468358576,0.9802679328310604,0.9326100487421132,0.7689003800698981,0.9789975339170169
 7,"def get_bk_user(request):
     bkuser = None
     if request.weixin_user and not isinstance(request.weixin_user, AnonymousUser):
@@ -1701,7 +1701,7 @@ def get_bk_user(request):
         except UserProperty.DoesNotExist:
             bkuser = None
     return bkuser or AnonymousUser()
-```",0.536523987132137,0.50842178982148,0.466563136482504,0.3228969545035153,0.8801022692631773,0.539001548621132,0.6240953898504338,0.539001548621132
+```",0.536523987132137,0.50842178982148,0.466563136482504,0.3228969545035153,0.8801022692631773,0.8121293906970197,0.6240953898504338,0.539001548621132
 8,"    def fit(self, dataset: Dataset):
         """"""Calculates statistics for this workflow on the input dataset
 
@@ -2078,7 +2078,7 @@ def fit(self, dataset: Dataset):
         self.input_dtypes = dict(zip(input_dtypes.index, input_dtypes))
         output_dtypes = self.transform(dataset).to_ddf().head(1).dtypes
         self.output_dtypes = dict(zip(output_dtypes.index, output_dtypes))
-```",0.903162190121081,0.903162190121081,0.8286961379873485,0.8548683265947126,0.9158847822337706,0.8669275332363515,0.8402695380279277,0.8669275332363515
+```",0.903162190121081,0.903162190121081,0.8286961379873485,0.8611183265947125,0.9158847822337706,0.9158847822337706,0.8402695380279277,0.8732834654397414
 9,"def main(args):
     """"""Multi-GPU Criteo/DLRM Preprocessing Benchmark
 
@@ -2882,7 +2882,7 @@ class OptimizedWriter(Writer):
         self._lock = threading.RLock()
         self.pwriter = partial(self._pwriter, **self.pwriter_kwargs)
 
-```",0.6864893750008196,0.5899371473913815,0.7276898152468154,0.6748946295388103,0.7073167170077417,0.69857454530671,0.7714463954644459,0.69857454530671
+```",0.6864893750008196,0.5899371473913815,0.7276898152468154,0.6748946295388103,0.7073167170077417,0.6169349420752358,0.7714463954644459,0.69857454530671
 11,"    def _append_writer(self, path, schema=None, add_args=None, add_kwargs=None):
         # Add additional args and kwargs
         _args = add_args or []
@@ -2985,7 +2985,7 @@ def _append_writer(self, path, schema=None, add_args=None, add_kwargs=None):
             return self.pwriter(path, *_args, **_kwargs)
 
     return _get_writer()
-```",0.7723012498721862,0.7102844849759558,0.6713182584395498,0.5467198810824336,0.8700593848530932,0.629374292490526,0.7516212948727483,0.629374292490526
+```",0.7723012498721862,0.7102844849759558,0.6713182584395498,0.5467198810824336,0.8700593848530932,0.827410623037153,0.7516212948727483,0.629374292490526
 12,"    def _close_writers(self):
         md_dict = {}
         for writer, path in zip(self.data_writers, self.data_paths):
@@ -3060,7 +3060,7 @@ def _close_writers(self):
             fn = path.split(self.fs.sep)[-1]
             md_dict[fn] = writer.close(metadata_file_path=fn)
     return md_dict
-```",0.6033838521609806,0.27697277649490337,0.7434492254767461,0.4939414304657187,0.6943117130399801,0.5632811361640139,0.933946763024866,0.5632811361640139
+```",0.6033838521609806,0.27697277649490337,0.7434492254767461,0.4939414304657187,0.6943117130399801,0.3009561069520696,0.933946763024866,0.5632811361640139
 13,"def fetch_table_data(
     table_cache, path, cache=""disk"", cats_only=False, reader=None, columns=None, **kwargs
 ):
@@ -3282,7 +3282,7 @@ def fetch_table_data(
 
     table = _fetch_table_data(path)
     return table
-```",0.9649056148805121,0.7165372530690771,0.9649056148805121,0.8293941096284353,0.9953833517078214,0.8530433220701307,0.9953833517078214,0.8530433220701307
+```",0.9649056148805121,0.7165372530690771,0.9649056148805121,0.8293941096284353,0.9953833517078214,0.7316651671213144,0.9953833517078214,0.8530433220701307
 14,"def _chunkwise_moments(df):
     df2 = cudf.DataFrame()
     for col in df.columns:
@@ -3362,7 +3362,7 @@ def _chunkwise_moments(df):
     }
     del df2
     return vals
-```",0.6981284851289413,0.43878920948060657,0.8573161069574432,0.4521073892317419,0.7266185742747681,0.5386528833156663,0.9049302961406794,0.5386528833156663
+```",0.6981284851289413,0.4245034951948923,0.8573161069574432,0.4521073892317419,0.7266185742747681,0.43252716551364456,0.9049302961406794,0.5386528833156663
 15,"    def to_ddf(self, columns=None):
         return dask_cudf.read_parquet(
             self.paths,
@@ -3498,7 +3498,7 @@ class ParquetDataset:
             raise AttributeError(""Cannot access attribute '{}' on ParquetDataset"".format(attr))
         return getattr(self.to_ddf(), attr)
 
-```",0.4670713466084381,0.4353132555083714,0.3114780588477932,0.33440128474533415,0.9449382873739652,0.5593402133417629,0.5072946480735919,0.5593402133417629
+```",0.4670713466084381,0.4353132555083714,0.3114780588477932,0.33440128474533415,0.9449382873739652,0.5943269896348786,0.5072946480735919,0.5593402133417629
 16,"    def get_ddf(self):
         if self.ddf is None:
             raise ValueError(""No dask_cudf frame available."")
@@ -3583,7 +3583,7 @@ def get_ddf(self):
         return functools.partial(self.ddf.to_ddf, columns=self.columns_ctx[""all""][""base""], shuffle=self._shuffle_parts)
     return self.ddf
 
-```",0.5362474874962879,0.4950189022705651,0.4049802955328774,0.41773426297026367,0.8070987776897302,0.5822406152706434,0.7691830134862675,0.5822406152706434
+```",0.5362474874962879,0.4950189022705651,0.4049802955328774,0.41773426297026367,0.8070987776897302,0.6273018134667687,0.7691830134862675,0.5822406152706434
 17,"    def add_data(self, gdf):
         # Populate columns idxs
         if not self.col_idx:
@@ -3836,7 +3836,7 @@ def add_data(self, gdf):
     if self.num_threads > 1:
         self.queue.join()
 
-```",0.9305648863295427,0.8396799582624553,0.8806496919111823,0.8283220851419913,0.9508801812466557,0.8485078485820575,0.8988876079546307,0.8485078485820575
+```",0.9305648863295427,0.8396799582624553,0.8806496919111823,0.8283220851419913,0.9508801812466557,0.8598238881370853,0.8988876079546307,0.8485078485820575
 18,"    def __init__(
         self,
         paths,
@@ -4160,7 +4160,7 @@ def __init__(
 
         assert self.row_groups_per_part > 0
 
-```",0.8089438672871325,0.8777080974229177,0.8096242901082074,0.7551972481988296,0.8702940017412591,0.8050432198449251,0.871039364880456,0.8050432198449251
+```",0.8089438672871325,0.8777080974229177,0.8096242901082074,0.7551972481988296,0.8702940017412591,0.9433637189364302,0.871039364880456,0.8050432198449251
 19,"    def __init__(self, *args, **kwargs):
         super().__init__(*args)
         self._meta = {}
@@ -4270,7 +4270,7 @@ class CSVReader(BaseReader):
     def get_csv_kwargs(self):
         return self.csv_kwargs
 
-```",0.5864200893939272,0.5502314805368479,0.6628997875434338,0.7073513371742984,0.7587480141069209,0.7725239119185221,0.8370244071334507,0.7725239119185221
+```",0.5864200893939272,0.5502314805368479,0.6628997875434338,0.7073513371742984,0.7587480141069209,0.7303342369645683,0.8370244071334507,0.7725239119185221
 20,"    def to_ddf(self, columns=None):
         return dask_cudf.read_csv(self.paths, chunksize=self.part_size, **self.csv_kwargs)[columns]","    def to_ddf(self, columns=None):
         return dask_cudf.read_csv(
@@ -4341,7 +4341,7 @@ class OptimizedDfReader:
             self.paths, names=self.names, chunksize=self.part_size, **column_dict
         )
 
-```",0.5534388622768736,0.3303060964870298,0.44824228100599806,0.31253581577786577,0.8411902727532827,0.3366052343963739,0.7740410240431643,0.3366052343963739
+```",0.5534388622768736,0.3303060964870298,0.44824228100599806,0.31253581577786577,0.8411902727532827,0.5227917124519939,0.7740410240431643,0.3366052343963739
 21,"    def _predict(self, X):
         """"""Collect results from clf.predict calls.""""""
 
@@ -4390,7 +4390,7 @@ def _predict(self, X):
 def _predict(self, X):
         """"""Collect results from clf.predict calls.""""""
         return np.asarray([clf.predict(X) for clf in self.clfs_]).T
-```",0.25,0.3560538696163024,0.46027471157438726,0.5188817752381811,0.25,0.948626715824175,0.6648989792255545,0.948626715824175
+```",0.25,0.3560538696163024,0.46027471157438726,0.5188817752381811,0.25,0.4829032849841104,0.6648989792255545,0.948626715824175
 22,"    def transform(
         self,
         xx: Any,
@@ -4923,7 +4923,7 @@ def transform(
         ... )
         >>> xpjr, ypjr, zpjr = transprojr.transform(xpj, ypj, zpj, radians=True)
         >>> ""%.3f %.3f %.3f"" % (xpjr, ypjr, zpjr)
-        '-2",0.38285840561412066,0.38285840561412066,0.38285840561412066,0.3802023898252432,0.38654402742511496,0.383893500953405,0.38654402742511496,0.383893500953405
+        '-2",0.38285840561412066,0.38285840561412066,0.38285840561412066,0.3802023898252432,0.38654402742511496,0.38654402742511496,0.38654402742511496,0.383893500953405
 23,"    def itransform(
         self,
         points: Any,
@@ -5477,7 +5477,7 @@ def itransform(
     '2212924.125 2619851.898'
     '2238294.779 2703763.736'
     >>> pipeline_str = (
-    ",0.3438637394337332,0.3438637394337332,0.3438637394337332,0.4827740406723665,0.34729221306627944,0.4827740406723665,0.34729221306627944,0.4827740406723665
+    ",0.3438637394337332,0.3438637394337332,0.3438637394337332,0.4827740406723665,0.34729221306627944,0.34729221306627944,0.34729221306627944,0.4827740406723665
 24,"    def from_user_input(value: Any) -> ""CRS"":
         """"""
         Initialize a CRS class instance with:
@@ -5772,7 +5772,7 @@ def from_user_input(value: str) -> ""CRS"":
     # If the value is not a supported type, raise an error.
 
     raise ValueError(f'Invalid value for CRS: {value}')
-```",0.7548287204071421,0.8464024116247997,0.8476982709371346,0.675838601392757,0.764799335483268,0.6837481763608177,0.8579569970552757,0.6837481763608177
+```",0.7548287204071421,0.8464024116247997,0.8476982709371346,0.675838601392757,0.764799335483268,0.8565908807799059,0.8579569970552757,0.6837481763608177
 25,"    def __init__(
         self,
         name: str = ""undefined"",
@@ -6004,7 +6004,7 @@ def __init__(
             )
 
         self._name = torch.jit.script(_init).name
-```",0.7602754416574636,0.6971766238528789,0.7681590830224059,0.7436263783551882,0.8090853234697758,0.8252482999411372,0.8644604872632005,0.8252482999411372
+```",0.7602754416574636,0.6971766238528789,0.7681590830224059,0.7436263783551882,0.8090853234697758,0.7342878084996952,0.8644604872632005,0.8252482999411372
 26,"    def __init__(
         self,
         base_crs: Any,
@@ -6310,7 +6310,7 @@ def __init__(
                     return DerivedGeographicCRS(
                         base_crs=base_crs, conversion=conversion, ellipsoidal_cs=ellipsoidal_cs, name=name
                     )
-```",0.8206912777685161,0.7091717665331732,0.7955205879160183,0.7495309851276881,0.9107949683531358,0.8061618479551711,0.8811162430552596,0.8061618479551711
+```",0.8206912777685161,0.7091717665331732,0.7955205879160183,0.7495309851276881,0.9107949683531358,0.7530861359716523,0.8811162430552596,0.8061618479551711
 27,"    def __init__(
         self,
         conversion: Any,
@@ -6625,7 +6625,7 @@ def __init__(
         with contextlib.closing(_init_cached(conversion, name, cartesian_cs, geodetic_crs)) as f:
             f.__enter__()
 
-```",0.7346880465618318,0.7381342024982583,0.6811501489708832,0.7482241418328237,0.8075371743634462,0.8794666777528412,0.794124080497852,0.8794666777528412
+```",0.7346880465618318,0.7381342024982583,0.6811501489708832,0.7482241418328237,0.8075371743634462,0.7919071181536227,0.794124080497852,0.8794666777528412
 28,"    def __init__(
         self,
         name: str,
@@ -6845,7 +6845,7 @@ def __init__(
             vert_crs_json[""geoid_model""] = {""name"": geoid_model}
 
         super().__init__(vert_crs_json)
-```",0.7506531133178751,0.6912104444760208,0.6471261190305531,0.8414999440448429,0.8065387447929497,0.9728439239509421,0.7081610870904528,0.9728439239509421
+```",0.7506531133178751,0.6912104444760208,0.6471261190305531,0.8414999440448429,0.8065387447929497,0.7530777343895709,0.7081610870904528,0.9728439239509421
 29,"def set_data_dir(proj_data_dir):
     """"""
     Set the data directory for PROJ to use.
@@ -6958,7 +6958,7 @@ def set_data_dir(proj_data_dir):
     from pyproj._datadir import set_search_paths
 
     set_search_paths()
-```",0.7892035548924039,0.8452010159593619,0.7339707083992391,0.8270495962303639,0.8366642435200894,0.85324007242084,0.7792088036373344,0.85324007242084
+```",0.7892035548924039,0.8452010159593619,0.7339707083992391,0.8270495962303639,0.8366642435200894,0.8904391111974572,0.7792088036373344,0.85324007242084
 30,"def set_data_dir(proj_data_dir):
     """"""
     Set the data directory for PROJ to use.
@@ -7121,7 +7121,7 @@ def set_data_dir(proj_data_dir):
         # use re-validate_PROJ_DATA instead of re-validate VALIDATED_PROJ_DATA to create a new database for the PROJ data directory
 
         re_validate_PROJ_DATA()
-```",0.6143521296586579,0.6133384668478548,0.596559060746211,0.4576664064175745,0.8352144148581374,0.429050537222767,0.725229960012884,0.429050537222767
+```",0.6143521296586579,0.6133384668478548,0.596559060746211,0.4576664064175745,0.8352144148581374,0.7872355855426572,0.725229960012884,0.429050537222767
 31,"def get_data_dir():
     """"""
     The order of preference for the data directory is:
@@ -7494,7 +7494,7 @@ def get_data_dir():
             ""with `pyproj.datadir.set_data_dir`.""
         )
     return _VALIDATED_PROJ_DATA
-```",0.7999069460606536,0.7782728843592936,0.7763633728287358,0.7763633728287358,0.9705435879836136,0.9367375693988665,0.9367375693988665,0.9367375693988665
+```",0.7999069460606536,0.7782728843592936,0.7763633728287358,0.7763633728287358,0.9705435879836136,0.9515702871374931,0.9367375693988665,0.9367375693988665
 32,"    def from_proj(proj_from, proj_to, skip_equivalent=False, always_xy=False):
         """"""Make a Transformer from a :obj:`~pyproj.proj.Proj` or input used to create one.
 
@@ -7886,7 +7886,7 @@ def transform(
     always_xy: bool, optional
         If true, the transform method will accept as input and return as output
         coordinates using the traditional GIS order, that is longitude, latitude
-        for geographic CRS and",0.7516171571226756,0.5316960887557297,0.7049981358541654,0.6741669453408357,0.7007410339941123,0.7042161940640578,0.6857243253001306,0.7042161940640578
+        for geographic CRS and",0.7516171571226756,0.5316960887557297,0.7049981358541654,0.6741669453408357,0.7007410339941123,0.5722010816878289,0.6857243253001306,0.7042161940640578
 33,"    def from_crs(crs_from, crs_to, skip_equivalent=False, always_xy=False):
         """"""Make a Transformer from a :obj:`~pyproj.crs.CRS` or input used to create one.
 
@@ -8141,7 +8141,7 @@ def from_crs(crs_from, crs_to, skip_equivalent=False, always_xy=False):
         contextlib.closing(crs_to),
     )
 
-```",0.8623157474895696,0.7369669715961777,0.7033893693845539,0.8604993573535904,0.9858155301620359,0.8302172924883253,0.7711849870873163,0.8302172924883253
+```",0.8623157474895696,0.7369669715961777,0.7033893693845539,0.8604993573535904,0.9858155301620359,0.7964776714282226,0.7711849870873163,0.8302172924883253
 34,"    def from_pipeline(proj_pipeline):
         """"""Make a Transformer from a PROJ pipeline string.
 
@@ -8389,7 +8389,7 @@ def from_pipeline(proj_pipeline):
     transformer._transformer = script(_Transformer.from_pipeline(cstrencode(proj_pipeline)))
     return transformer
 
-```",0.7198552855511975,0.6260351815021072,0.7371483472178811,0.7544813382314175,0.7490674231884237,0.7236704613963936,0.77823237432036,0.7236704613963936
+```",0.7198552855511975,0.6260351815021072,0.7371483472178811,0.7544813382314175,0.7490674231884237,0.7409111164986916,0.77823237432036,0.7236704613963936
 35,"def _dict2string(projparams):
     # convert a dict to a proj4 string.
     pjargs = []
@@ -8582,7 +8582,7 @@ def proj4str(projparams, **kwargs):
     projparams_script = torch.jit.script(projparams)
     proj4str_script = torch.jit.script(_dict2string_async)
     return proj4str_script(projparams_script)
-```",0.5430149567727036,0.44076816483954423,0.5460127420246308,0.5024470557789378,0.7492584984511407,0.7242346137852989,0.7745587892551963,0.7242346137852989
+```",0.5430149567727036,0.4460873137757144,0.5460127420246308,0.5024470557789378,0.7409251651178073,0.5801981050785803,0.7662254559218629,0.7159012804519655
 36,"    def __init__(self, projparams=None, preserve_units=True, **kwargs):
         """"""
         initialize a Proj class instance.
@@ -8924,7 +8924,7 @@ def __init__(self, projparams=None, preserve_units=True, **kwargs):
         >>> 'x=%12.3f y=%12.3f (meters)' % p(-114.057222, 51.045)
         'x=-1783506.250 y= 6193827.033 (meters)'
         >>> p = Proj(""+init=epsg:32667"")
-",0.4284525038120859,0.3642405434335758,0.3642405434335758,0.3572688973946813,0.4392440561405857,0.36390277490689127,0.37162240755362463,0.36390277490689127
+",0.4284525038120859,0.3642405434335758,0.3642405434335758,0.3572688973946813,0.4392440561405857,0.37162240755362463,0.37162240755362463,0.36390277490689127
 37,"def Kuf_conv_patch(inducing_variable, kernel, Xnew):
     Xp = kernel.get_patches(Xnew)  # [N, num_patches, patch_len]
     bigKzx = kernel.base_kernel.K(
@@ -8968,7 +8968,7 @@ def Kuf_conv_patch(feat, kern, Xnew):
     if hasattr(kern, ""weights""):
         Kzx = Kzx * kern.weights
     return Kzx / kern.num_patches
-```",0.5951826552856126,0.5325490327369279,0.7667256035097034,0.6110846163725642,0.7240958308130847,0.7557889721266122,0.9431544094851917,0.7557889721266122
+```",0.5951826552856126,0.5325490327369279,0.7667256035097034,0.6110846163725642,0.7240958308130847,0.659682977165611,0.9431544094851917,0.7557889721266122
 38,"def Kuu_kernel_inducingpoints(inducing_variable: InducingPoints, kernel: Kernel, *, jitter=0.0):
     Kzz = kernel(inducing_variable.Z)
     Kzz += jitter * tf.eye(inducing_variable.num_inducing, dtype=Kzz.dtype)
@@ -9001,7 +9001,7 @@ def Kuu_kernel_inducingpoints(inducing_variable: InducingPoints, kernel: Kernel,
 def Kuu_kernel_inducingpoints(inducing_variable: InducingPoints, kernel: Kernel, *, jitter=0.0):
     Kzz = kernel(inducing_variable.Z)
     return Kzz + jitter * tf.eye(len(inducing_variable), dtype=Kzz.dtype)
-```",0.6809955566417459,0.7607807601221888,0.6353107819655863,0.6320373454914204,0.80808032503862,0.7095655568006369,0.7701848399431979,0.7095655568006369
+```",0.6809955566417459,0.7607807601221888,0.6353107819655863,0.6320373454914204,0.80808032503862,0.7642422985837273,0.7701848399431979,0.7095655568006369
 39,"def Kuu_sqexp_multiscale(inducing_variable: Multiscale, kernel: SquaredExponential, *, jitter=0.0):
     Zmu, Zlen = kernel.slice(inducing_variable.Z, inducing_variable.scales)
     idlengthscales2 = tf.square(kernel.lengthscales + Zlen)
@@ -9055,7 +9055,7 @@ def Kuu_sqexp_multiscale(inducing_variable: Multiscale, kernel: SquaredExponenti
     Kzz = kernel.variance * tf.exp(-d / 2) * tf.reduce_prod(kernel.lengthscales / sc, 2)
     Kzz += jitter * tf.eye(len(inducing_variable), dtype=Kzz.dtype)
     return Kzz
-```",0.7893585212583195,0.7258935171326435,0.25,0.6243648452866442,0.8309288335443283,0.6684912620611286,0.25,0.6684912620611286
+```",0.7893585212583195,0.7258935171326435,0.25,0.6243648452866442,0.8309288335443283,0.7741545006283175,0.25,0.6684912620611286
 40,"def Kuu_conv_patch(inducing_variable, kernel, jitter=0.0):
     return kernel.base_kernel.K(inducing_variable.Z) + jitter * tf.eye(
         inducing_variable.num_inducing, dtype=default_float()
@@ -9080,7 +9080,7 @@ def Kuu_conv_patch(feat, kern, jitter=0.0):
         return kern.base_kernel.K(feat.Z) + jitter * tf.eye(len(feat), dtype=default_float())
     else:
         return kern.base_kernel.K(feat.Z)
-```",0.4198550258036507,0.44903649781418625,0.25,0.4362099417620118,0.5829469570191628,0.7612253998675108,0.25,0.7612253998675108
+```",0.4198550258036507,0.44903649781418625,0.25,0.4362099417620118,0.5829469570191628,0.7640865546295134,0.25,0.7612253998675108
 41,"def _Kuu(
     inducing_variable: FallbackSeparateIndependentInducingVariables,
     kernel: Union[SeparateIndependent, LinearCoregionalization],
@@ -9136,7 +9136,7 @@ def _Kuu(
     Kmm = tf.stack(Kmms, axis=0)  # [L, M, M]
     jittermat = tf.eye(len(inducing_variable), dtype=Kmm.dtype)[:, None, :] * jitter
     return Kmm + jittermat
-```",0.6810463295304401,0.7774947854160594,0.25,0.8735846582458224,0.6830994696270585,0.9053979743285094,0.25,0.9053979743285094
+```",0.6810463295304401,0.7774947854160594,0.25,0.8735846582458224,0.6830994696270585,0.8448219550454648,0.25,0.9053979743285094
 42,"    def __init__(self, Z: TensorData, name: Optional[str] = None):
         """"""
         :param Z: the initial positions of the inducing points, size [M, D]
@@ -9265,7 +9265,7 @@ class VariationalGP(GP):
         """"""
         return self.Z.value()
 
-```",0.5504810906792764,0.5363050171756931,0.6424956225973013,0.5706781872955388,0.7570085930913926,0.799223866998575,0.9113752486559368,0.799223866998575
+```",0.5504810906792764,0.5363050171756931,0.6424956225973013,0.5706781872955388,0.7570085930913926,0.7151677999699763,0.9113752486559368,0.799223866998575
 43,"    def __len__(self) -> int:
         return tf.shape(self.Z)[0]","    def __len__(self) -> int:
         return self.Z.shape[0]","1. Use `torch.jit.script` to make the code more concise and secure.
@@ -9343,7 +9343,7 @@ class MyClass:
     @lru_cache(maxsize=None)
     def __len__(self) -> int:
         return self.Z.shape[0]
-```",0.551841485824696,0.5651324711069411,0.5685569828317514,0.576500227448941,0.7429692002295476,0.7754219292733262,0.7649680314541182,0.7754219292733262
+```",0.551841485824696,0.5651324711069411,0.5685569828317514,0.576500227448941,0.7429692002295476,0.7604611205660443,0.7649680314541182,0.7754219292733262
 44,"    def __len__(self) -> int:
         return self.inducing_variable.num_inducing","    def __len__(self) -> int:
         return len(self.inducing_variable)","1. Use `functools.lru_cache` to cache the results of `__len__`.
@@ -9408,7 +9408,7 @@ def __len__(self) -> int:
         return len(self.inducing_variable)
 
     return _len_inducing_variable()
-```",0.5219260955483241,0.5934877772747422,0.5517485204544159,0.5287504815636429,0.6902287022400972,0.6483685685980405,0.7391080042939115,0.6483685685980405
+```",0.5219260955483241,0.5934877772747422,0.5517485204544159,0.5287504815636429,0.6902287022400972,0.5518211106080755,0.7391080042939115,0.6483685685980405
 45,"    def __len__(self) -> int:
         # TODO(st--) we should check that they all have the same length...
         return self.inducing_variable_list[0].num_inducing","    def __len__(self) -> int:
@@ -9472,7 +9472,7 @@ def __len__(self) -> int:
         return [torch.jit.script(torch.arange(0, self.inducing_variable_size)) for _ in range(self.num_inducing_variable_list)]
 
     return len(inducing_variable_list()[0])
-```",0.39369698973941347,0.39755725312172946,0.41911941776830924,0.4100425227420827,0.5473154598347689,0.4985463022144398,0.6169308419644294,0.4985463022144398
+```",0.39369698973941347,0.39755725312172946,0.41911941776830924,0.4100425227420827,0.5473154598347689,0.4842981867086968,0.6169308419644294,0.4985463022144398
 46,"    def __init__(
         self,
         distribution_class: Type[tfp.distributions.Distribution] = tfp.distributions.Normal,
@@ -9692,7 +9692,7 @@ def conditional_distribution(Fs) -> tfp.distributions.Distribution:
     loc = Fs[..., :1]
     scale = scale_transform(Fs[..., 1:])
     return distribution_class(loc, scale)
-```",0.4981514086204486,0.6258394162636824,0.7961216122202592,0.7961216122202592,0.5748517657138336,0.9629701785526875,0.9629701785526875,0.9629701785526875
+```",0.4981514086204486,0.6258394162636824,0.7961216122202592,0.7961216122202592,0.5748517657138336,0.7687020858596265,0.9629701785526875,0.9629701785526875
 48,"    def elbo(self) -> tf.Tensor:
         """"""
         Construct a tensorflow function to compute the bound on the marginal
@@ -10040,7 +10040,7 @@ def elbo(self) -> tf.Tensor:
         bound += -0.5 * D * (tf.reduce_sum(psi0) / sigma2 - tf.reduce_sum(tf.linalg.diag_part(AAT)))
         bound -= KL
         return bound
-```",0.8594160783835079,0.8692648116533537,0.8754666888091824,0.8754666888091824,0.9787576351672339,0.9967430102833257,0.9967430102833257,0.9967430102833257
+```",0.8594160783835079,0.8692648116533537,0.8754666888091824,0.8754666888091824,0.9787576351672339,0.9178287427450026,0.9967430102833257,0.9967430102833257
 49,"    def predict_f(
         self, Xnew: InputData, full_cov: bool = False, full_output_cov: bool = False
     ) -> MeanAndVariance:
@@ -10396,7 +10396,7 @@ def predict_f(
                 - tf.reduce_sum(tf.square(tmp1), axis=0)
             )
         return mean + self.mean_function(Xnew), var
-```",0.826090978108905,0.8456273313006828,0.9063072633440442,0.7634367976262043,0.9130920039933745,0.8794517989546579,0.904327220626792,0.8794517989546579
+```",0.826090978108905,0.8456273313006828,0.9063072633440442,0.7634367976262043,0.9130920039933745,0.9889869798553836,0.904327220626792,0.8794517989546579
 50,"    def __init__(
         self,
         data: RegressionData,
@@ -10550,7 +10550,7 @@ def __init__(
         self.V.prior = tfp.distributions.Normal(
             loc=tf.constant(0.0), scale=tf.constant(1.0)
         )
-```",0.8490102933636132,0.8546488823074192,0.892216599126821,0.892216599126821,0.8837109967896409,0.9352461979474902,0.9352461979474902,0.9352461979474902
+```",0.8490102933636132,0.8546488823074192,0.892216599126821,0.892216599126821,0.8837109967896409,0.8642360113112395,0.9352461979474902,0.9352461979474902
 51,"    def upper_bound(self) -> tf.Tensor:
         """"""
         Upper bound for the sparse GP regression marginal likelihood.  Note that
@@ -10935,7 +10935,7 @@ def upper_bound(self) -> tf.Tensor:
         )
 
         return const + logdet + quad
-```",0.9528571774391317,0.8755734623280877,0.8762111096663374,0.8981811689568816,0.9574225537118755,0.9028838406631231,0.8807513020194813,0.9028838406631231
+```",0.9528571774391317,0.8755734623280877,0.8762111096663374,0.8981811689568816,0.9574225537118755,0.8800916170207842,0.8807513020194813,0.9028838406631231
 52,"    def elbo(self) -> tf.Tensor:
         """"""
         Construct a tensorflow function to compute the bound on the marginal
@@ -11166,7 +11166,7 @@ def elbo(self) -> tf.Tensor:
         bound += 0.5 * output_dim * tf.reduce_sum(tf.linalg.diag_part(AAT))
 
         return bound
-```",0.8546256833362021,0.8509866118298411,0.8477296060776971,0.7849275500280223,0.96406505885553,0.8362562976687347,0.8741569683355268,0.8362562976687347
+```",0.8546256833362021,0.8509866118298411,0.8477296060776971,0.7849275500280223,0.96406505885553,0.8631693124016118,0.8741569683355268,0.8362562976687347
 53,"    def predict_f(self, Xnew: InputData, full_cov=False, full_output_cov=False) -> MeanAndVariance:
         """"""
         Compute the mean and variance of the latent function at some new points
@@ -11395,7 +11395,7 @@ def predict_f(self, Xnew: InputData, full_cov=False, full_output_cov=False) -> M
             )
             var = tf.tile(var[:, None], [1, self.num_latent_gps])
         return mean + self.mean_function(Xnew), var
-```",0.8604081741208127,0.7527933010297094,0.7767508770654028,0.8604081741208127,0.9956234466467263,0.9956234466467263,0.8534075460755434,0.9956234466467263
+```",0.8604081741208127,0.7527933010297094,0.7767508770654028,0.8604081741208127,0.9956234466467263,0.8731147658529357,0.8534075460755434,0.9956234466467263
 54,"    def common_terms(self):
         X_data, Y_data = self.data
         num_inducing = self.inducing_variable.num_inducing
@@ -11547,7 +11547,7 @@ def common_terms(self):
         gamma = tf.linalg.solve(L, alpha, lower=True)  # size [N, R]
 
         return err, nu, Luu, L, alpha, beta, gamma
-```",0.8321583071103525,0.8239815123248275,0.8183674184706514,0.8203201368515975,0.9572917961484257,0.971613984549885,0.9696148320152551,0.971613984549885
+```",0.8321583071103525,0.8239815123248275,0.8183674184706514,0.8203201368515975,0.9572917961484257,0.9749502085320663,0.9696148320152551,0.971613984549885
 55,"    def __init__(
         self,
         kernel,
@@ -11855,7 +11855,7 @@ class SVGP_jit(SVGP):
     def inducing_variational_parameters(self):
         return super().inducing_variational_parameters()
 
-```",0.8602910148204836,0.6975401812081543,0.8595266996712351,0.7902947530773743,0.891592933737919,0.822014161272864,0.890813360328904,0.822014161272864
+```",0.8602910148204836,0.6975401812081543,0.8595266996712351,0.7902947530773743,0.891592933737919,0.7207032675118332,0.890813360328904,0.822014161272864
 56,"def ndiagquad(funcs, H: int, Fmu, Fvar, logspace: bool = False, **Ys):
     """"""
     Computes N Gaussian expectation integrals of one or more functions
@@ -12251,7 +12251,7 @@ def ndiagquad(funcs, H: int, Fmu, Fvar, logspace: bool = False, **Ys):
         return result
 
     return quadrature(funcs, Fmu, Fvar, **Ys)
-```",0.9057444102445308,0.8960785722092762,0.9015874311776337,0.9150211425836327,0.9615563607857501,0.9515873501286307,0.9594714388399935,0.9515873501286307
+```",0.9057444102445308,0.8960785722092762,0.9015874311776337,0.9150211425836327,0.9615563607857501,0.9646057586373643,0.9594714388399935,0.9515873501286307
 57,"    def wrapper(old_fun):
         def new_fun(X, **Ys):
             Xs = tf.unstack(X, axis=-1)
@@ -12306,7 +12306,7 @@ def wrapper(old_fun):
         return fun_eval
 
     return new_fun
-```",0.43922180474697303,0.47237667841416975,0.25,0.40213587593689437,0.6363066904239497,0.6948649382456842,0.25,0.6948649382456842
+```",0.43922180474697303,0.47237667841416975,0.25,0.40213587593689437,0.6363066904239497,0.7006497299846199,0.25,0.6948649382456842
 58,"        def new_fun(X, **Ys):
             Xs = tf.unstack(X, axis=-1)
             fun_eval = old_fun(*Xs, **Ys)
@@ -12344,7 +12344,7 @@ def new_fun(X, **Ys):
     if tf.rank(fun_eval) < tf.rank(X):
         fun_eval = tf.expand_dims(fun_eval, axis=-1)
     return fun_eval
-```",0.2954715139277416,0.32735000758651855,0.25,0.6281817637667495,0.5892871706628472,0.9695348995306691,0.25,0.9695348995306691
+```",0.2954715139277416,0.32735000758651855,0.25,0.6281817637667495,0.5892871706628472,0.6133132078106954,0.25,0.9695348995306691
 59,"    def __init__(
         self,
         data: OutputData,
@@ -12585,7 +12585,7 @@ def __init__(
 
         gpr_data = (Parameter(X_data_mean), data)
         super().__init__(gpr_data, kernel, mean_function=mean_function)
-```",0.8811264816983376,0.9569066171961536,0.7945501305524778,0.7746013797739042,0.8862712649308264,0.7942549836360595,0.8036919273160033,0.7942549836360595
+```",0.8811264816983376,0.9569066171961536,0.7945501305524778,0.7746013797739042,0.8862712649308264,0.9937224604541055,0.8036919273160033,0.7942549836360595
 60,"    def __init__(
         self,
         data: OutputData,
@@ -12987,7 +12987,7 @@ def __init__(
         assert self.X_prior_mean.shape[1] == self.num_latent_gps
         assert self.X_prior_var.shape[0] == self.num_data
         assert self.X_prior_var.shape[1] == self.num_latent_gps
-```",0.8244127369906454,0.8163584240645795,0.8800117461291271,0.867921246445913,0.9206879387680662,0.9764930116638086,0.983964396985087,0.9764930116638086
+```",0.8244127369906454,0.8163584240645795,0.8800117461291271,0.867921246445913,0.9206879387680662,0.8663964257054627,0.983964396985087,0.9764930116638086
 61,"    def __init__(
         self,
         data: RegressionData,
@@ -13160,7 +13160,7 @@ class OptimizedGaussianProcess(GaussianProcess):
         """"""
         return super().__call__(x)
 
-```",0.7144458185606601,0.7199808324273127,0.8942810182071458,0.5995071573096218,0.7899327191224839,0.6141609809060022,0.9768269465049255,0.6141609809060022
+```",0.7144458185606601,0.7199808324273127,0.8942810182071458,0.5995071573096218,0.7899327191224839,0.7961782522918024,0.9768269465049255,0.6141609809060022
 62,"    def __init__(
         self,
         data: RegressionData,
@@ -13312,7 +13312,7 @@ def __init__(
         self.inducing_variable = inducingpoint_wrapper(inducing_variable)
         self.V = Parameter(np.zeros((len(self.inducing_variable), self.num_latent_gps)))
         self.V.prior = tfp.distributions.Normal(loc=0.0, scale=1.0)
-```",0.86346690027908,0.9388662975647786,0.8579380214012848,0.8565691268146546,0.9284604175325422,0.9183196137176244,0.9195688305998826,0.9183196137176244
+```",0.86346690027908,0.9388662975647786,0.8579380214012848,0.8565691268146546,0.9284604175325422,0.9044413448697759,0.9195688305998826,0.9183196137176244
 63,"    def __init__(
         self,
         data: RegressionData,
@@ -13563,7 +13563,7 @@ def __init__(
 
         # Use functools.lru_cache to cache the results of inducingpoint_wrapper
         self.inducing_variable = functools.lru_cache(maxsize=1)(inducingpoint_wrapper)(inducing_variable)
-```",0.7028332288009272,0.8005973467241903,0.8304377180431046,0.7193441387773556,0.7766328139154757,0.7815894297396753,0.9531484090016531,0.7815894297396753
+```",0.7028332288009272,0.8005973467241903,0.8304377180431046,0.7193441387773556,0.7766328139154757,0.828511875592001,0.9531484090016531,0.7815894297396753
 64,"    def __init__(
         self,
         data: RegressionData,
@@ -13868,7 +13868,7 @@ def __init__(
         self.q_mu = Parameter(np.zeros((num_data, self.num_latent_gps)))
         q_sqrt = np.array([np.eye(num_data) for _ in range(self.num_latent_gps)])
         self.q_sqrt = Parameter(q_sqrt, transform=triangular())
-```",0.6050858980940494,0.6972301653373196,0.6857534395687261,0.785546793369994,0.6784601796832164,0.9601402012666467,0.6970986452461332,0.9601402012666467
+```",0.6050858980940494,0.6972301653373196,0.6857534395687261,0.785546793369994,0.6784601796832164,0.7619821594521154,0.6970986452461332,0.9601402012666467
 65,"    def __init__(
         self,
         data: RegressionData,
@@ -14090,7 +14090,7 @@ def __init__(
         self.q_lambda = Parameter(
             np.ones((self.num_data, self.num_latent_gps)), transform=gpflow.utilities.positive()
         )
-```",0.7022683831187309,0.6790061502105419,0.7196070513170921,0.8015598903175465,0.769691792673983,0.8722576347406911,0.7801037149690513,0.8722576347406911
+```",0.7022683831187309,0.6790061502105419,0.7196070513170921,0.8015598903175465,0.769691792673983,0.7379939235793348,0.7801037149690513,0.8722576347406911
 66,"    def __init__(
         self,
         data: RegressionData,
@@ -14301,7 +14301,7 @@ def __init__(
         self.V.prior = tfp.distributions.Normal(
             loc=to_default_float(0.0), scale=to_default_float(1.0)
         )
-```",0.8726028245865552,0.8324965517067937,0.7880125117843412,0.8575086712061221,0.9304002174427097,0.9920312851273888,0.8495221203200632,0.9920312851273888
+```",0.8726028245865552,0.8324965517067937,0.7880125117843412,0.8575086712061221,0.9304002174427097,0.9001205408087941,0.8495221203200632,0.9920312851273888
 67,"    def K(self, X: tf.Tensor, X2: Optional[tf.Tensor] = None) -> tf.Tensor:
         sig_X = self._sigmoids(X)  # N1 x 1 x Ncp
         sig_X2 = self._sigmoids(X2) if X2 is not None else sig_X  # N2 x 1 x Ncp
@@ -14440,7 +14440,7 @@ def K(self, X: tf.Tensor, X2: Optional[tf.Tensor] = None) -> tf.Tensor:
         # now combine with the underlying kernels
         kernel_stack = tf.stack([k(X, X2) for k in self.kernels], axis=2)
         return tf.reduce_sum(kernel_stack * starters * stoppers, axis=2)
-```",0.8262263959289142,0.7443339026929138,0.7194260636938214,0.7204906749449236,0.9937780368453991,0.8221320370473111,0.8285260675998511,0.8221320370473111
+```",0.8262263959289142,0.7443339026929138,0.7194260636938214,0.7204906749449236,0.9937780368453991,0.8103432818948839,0.8285260675998511,0.8221320370473111
 68,"def autoflow(*af_args, **af_kwargs):
     def autoflow_wrapper(method):
         @functools.wraps(method)
@@ -14575,7 +14575,7 @@ def autoflow(*af_args, **af_kwargs):
             return _session_run(session, obj, store, *args, **kwargs)
         return runnable
     return autoflow_wrapper
-```",0.8669268875228311,0.9322715294758522,0.9322715294758522,0.9291430412476719,0.9081354519705357,0.9871274056561671,0.9904800053041434,0.9871274056561671
+```",0.8669268875228311,0.9322715294758522,0.9322715294758522,0.9291430412476719,0.9081354519705357,0.9904800053041434,0.9904800053041434,0.9871274056561671
 69,"    def autoflow_wrapper(method):
         @functools.wraps(method)
         def runnable(obj, *args, **kwargs):
@@ -14700,7 +14700,7 @@ def autoflow_wrapper(method):
         return _session_run(session, obj, store, *args, **kwargs)
 
     return runnable
-```",0.8554113737928686,0.9327185372453666,0.9111059159981338,0.9078036393755758,0.8863830421678378,0.957243699444914,0.9608164099734139,0.957243699444914
+```",0.8554113737928686,0.9327185372453666,0.9111059159981338,0.9078036393755758,0.8863830421678378,0.989790871716864,0.9608164099734139,0.957243699444914
 70,"        def runnable(obj, *args, **kwargs):
             if not isinstance(obj, Node):
                 raise GPflowError(
@@ -14809,7 +14809,7 @@ def runnable(obj, *args, **kwargs):
             _setup_storage(store, *af_args, **af_kwargs)
             _build_method(method, obj, store)
     return _session_run(session, obj, store, *args, **kwargs)
-```",0.8546288538346519,0.8696793958056211,0.8324537642843712,0.7719469369089593,0.8960049877744365,0.8195380733441381,0.8835379102120302,0.8195380733441381
+```",0.8546288538346519,0.8696793958056211,0.8324537642843712,0.7719469369089593,0.8960049877744365,0.8587295534849007,0.8835379102120302,0.8195380733441381
 71,"def initialize_variables(variables=None, session=None, force=False, **run_kwargs):
     session = tf.get_default_session() if session is None else session
     if variables is None:
@@ -14901,7 +14901,7 @@ def initialize_variables(variables=None, session=None, force=False, **run_kwargs
             vars_for_init = [v for v in variables if v.name.split(':')[0] in uninitialized]
             initializer = tf.variables_initializer(vars_for_init)
     session.run(initializer, **run_kwargs)
-```",0.6245516680422637,0.6133326972957663,0.6443458275970573,0.6443458275970573,0.5894679301348995,0.5754489912897008,0.5692959979415856,0.5754489912897008
+```",0.6245516680422637,0.6133326972957663,0.6443458275970573,0.6443458275970573,0.5894679301348995,0.5109466529048576,0.5692959979415856,0.5754489912897008
 72,"    def _clear(self):
         self._reset_name()
         self._initial_value_tensor = None
@@ -14955,7 +14955,7 @@ def _clear(self):
         self._dataholder.clear()
         self._initial_value_tensor = None
         self._dataholder_tensor = None
-```",0.5161640204600706,0.3605233803123648,0.20468360223848994,0.4710131427842426,0.6367172418271398,0.5295039109026808,0.2431448205075264,0.5295039109026808
+```",0.5161640204600706,0.3605233803123648,0.20468360223848994,0.4710131427842426,0.6367172418271398,0.4358915729531793,0.2431448205075264,0.5295039109026808
 73,"    def _build(self):
         tensor = self._build_parameter()
         self._dataholder_tensor = tensor
@@ -14993,7 +14993,7 @@ def _build(self):
     def build_parameter():
         return self._build_parameter()
     self._dataholder_tensor = build_parameter()
-```",0.25,0.24204926148739617,0.18195177109483107,0.211722969714212,0.25,0.35208134101760613,0.4250556007498276,0.35208134101760613
+```",0.25,0.24204926148739617,0.18195177109483107,0.211722969714212,0.25,0.30183652953964013,0.4250556007498276,0.35208134101760613
 74,"    def _init_parameter_defaults(self):
         self._initial_value_tensor = None
         self._dataholder_tensor = None
@@ -15062,7 +15062,7 @@ def _init_parameter_defaults(self):
 @functools.lru_cache()
 def init_parameter_defaults(self):
     return functools.partial(_init_parameter_defaults, self)
-```",0.1873182699039656,0.1279673974322914,0.4208367280401428,0.49405908461190173,0.22664104036503793,0.6201976358083047,0.48959001582836514,0.6201976358083047
+```",0.1873182699039656,0.1279673974322914,0.4208367280401428,0.49405908461190173,0.22664104036503793,0.1464517686844168,0.48959001582836514,0.6201976358083047
 75,"    def initializables(self):
         if self._externally_defined:
             return None
@@ -15119,7 +15119,7 @@ class OptimizedParameterModule(torch.nn.Module):
             return None
         return [self.parameter_tensor()]
 
-```",0.6371416865286758,0.6716930041165754,0.5033148344632505,0.4804074734051287,0.8018175312897065,0.5493737192561062,0.6919079642993184,0.5493737192561062
+```",0.6371416865286758,0.6716930041165754,0.5033148344632505,0.4804074734051287,0.8018175312897065,0.7614925833008862,0.6919079642993184,0.5493737192561062
 76,"    def read_value(self, session=None):
         if session is not None and not isinstance(session, tf.Session):
             raise ValueError('TensorFlow session expected as an argument.')
@@ -15185,7 +15185,7 @@ def read_value(self, session=None):
         elif self._externally_defined:
             raise GPflowError('Externally defined parameter requires session.')
     return self._value
-```",0.5391505402526378,0.43270990219071026,0.7157978487234704,0.6945992150275684,0.6931488177375702,0.8940671749407927,0.9504163527942393,0.8940671749407927
+```",0.5391505402526378,0.43270990219071026,0.7157978487234704,0.6945992150275684,0.6931488177375702,0.5832186045094853,0.9504163527942393,0.8940671749407927
 77,"    def _clear(self):
         self._reset_name()
         self._externally_defined = False
@@ -15256,7 +15256,7 @@ def _clear(self):
         self._prior_tensor = None
     # pylint: enable=protected-access
 
-```",0.3528458035631409,0.3528458035631409,0.37280815650189725,0.4811987049517327,0.3111060997875255,0.37026609000912525,0.6940612906530478,0.37026609000912525
+```",0.3528458035631409,0.3528458035631409,0.37280815650189725,0.4811987049517327,0.3111060997875255,0.3111060997875255,0.6940612906530478,0.37026609000912525
 78,"    def _build(self):
         unconstrained = self._build_parameter()
         constrained = self._build_constrained(unconstrained)
@@ -15355,7 +15355,7 @@ def _build(self):
         self._unconstrained_tensor = cache(unconstrained)
         self._constrained_tensor = cache(constrained)
         self._prior_tensor = cache(prior)
-```",0.3839210355857269,0.6011030088161528,0.5510171435675282,0.29646666132374144,0.6113629813483342,0.2957737980772973,0.7125809875985276,0.2957737980772973
+```",0.3839210355857269,0.6011030088161528,0.5510171435675282,0.29646666132374144,0.6113629813483342,0.5061361914030231,0.7125809875985276,0.2957737980772973
 79,"    def _build_parameter(self):
         if self._externally_defined:
             self._check_tensor_trainable(self.parameter_tensor)
@@ -15490,7 +15490,7 @@ def _build_parameter(self):
         return tf.get_variable(name, initializer=init,
                                validate_shape=False,
                                trainable=self.trainable)
-```",0.7626695450469227,0.7838533691228107,0.7062533495025413,0.7444907710184436,0.9198005035369163,0.8548051374900432,0.8599476825117105,0.8548051374900432
+```",0.7626695450469227,0.7838533691228107,0.7062533495025413,0.7444907710184436,0.9198005035369163,0.909687309810121,0.8599476825117105,0.8548051374900432
 80,"    def _init_parameter_defaults(self):
         self._is_initialized_tensor = None
         self._initial_value_tensor = None
@@ -15634,7 +15634,7 @@ def _init_parameter_defaults(self):
     self._prior_tensor = tf.zeros(self.param_shape, dtype=tf.float32)
     self._constrained_tensor = tf.zeros(self.param_shape, dtype=tf.float32)
   _init_parameter_defaults_cached()
-```",0.4720768065984709,0.10506353202795593,0.10885070734265483,0.11038355858484411,0.5431321874279144,0.11657180322913002,0.1148051197083917,0.11657180322913002
+```",0.4720768065984709,0.10506353202795593,0.10885070734265483,0.11038355858484411,0.5431321874279144,0.11015625482710185,0.1148051197083917,0.11657180322913002
 81,"    def minimize(self, model, session=None, var_list=None, feed_dict=None,
                  maxiter=1000, initialize=False, anchor=True, **kwargs):
         """"""
@@ -15896,7 +15896,7 @@ def minimize(self, model, session=None, var_list=None, feed_dict=None,
 
         if anchor:
             model.anchor(session)
-```",0.8247846874491938,0.8467997574351652,0.8826147703029515,0.8589638123097122,0.9224659715848759,0.9345008918967828,0.9941774467163489,0.9345008918967828
+```",0.8247846874491938,0.8467997574351652,0.8826147703029515,0.8589638123097122,0.9224659715848759,0.940372924807183,0.9941774467163489,0.9345008918967828
 82,"    def prob_is_largest(self, Y, mu, var, gh_x, gh_w):
         # work out what the mean and variance is of the indicated latent function.
         oh_on = tf.cast(tf.one_hot(tf.reshape(Y, (-1,)), self.num_classes, 1., 0.), tf.float64)
@@ -16005,7 +16005,7 @@ def prob_is_largest(self, Y, mu, var, gh_x, gh_w):
 
         # take the product over the latent functions, and the sum over the GH grid.
         return tf.matmul(tf.reduce_prod(cdfs, 1), tf.reshape(gh_w/np.sqrt(np.pi), (-1, 1)))
-```",0.8160823853104692,0.8246204733839051,0.25,0.8219820404407436,0.8226396724044113,0.8424746687583164,0.25,0.8424746687583164
+```",0.8160823853104692,0.8246204733839051,0.25,0.8219820404407436,0.8226396724044113,0.8313698149115609,0.25,0.8424746687583164
 83,"    def __call__(self, tf_method):
         @wraps(tf_method)
         def runnable(instance, *np_args):
@@ -16100,7 +16100,7 @@ def __call__(self, tf_method):
             feed_dict[instance._free_vars] = instance.get_free_state()
             return instance._session.run(graph, feed_dict=feed_dict)
         return runnable
-```",0.7004957313616508,0.7000087549396562,0.8803803817578999,0.8058198435444499,0.7814548082504765,0.9010874079733536,0.9871220333123054,0.9010874079733536
+```",0.7004957313616508,0.7000087549396562,0.8803803817578999,0.8058198435444499,0.7814548082504765,0.7814608866099371,0.9871220333123054,0.9010874079733536
 84,"        def runnable(instance, *np_args):
             graph_name = '_' + tf_method.__name__ + '_graph'
             if not hasattr(instance, graph_name):
@@ -16181,7 +16181,7 @@ def runnable(instance, *np_args):
     return instance._session.run(graph, feed_dict=feed_dict)
 
 instance.run = functools.lru_cache(maxsize=None)(partial(runnable, instance))
-```",0.7028286653168723,0.7926580148520741,0.8761868538484787,0.6380375307547855,0.7923155069609262,0.7007687645330126,0.9854830676964107,0.7007687645330126
+```",0.7028286653168723,0.7926580148520741,0.8761868538484787,0.6380375307547855,0.7923155069609262,0.8989638403733238,0.9854830676964107,0.7007687645330126
 85,"    def browse(self, uri):
         logger.debug(""Browsing files at: %s"", uri)
         result = []
@@ -16499,7 +16499,7 @@ def browse(self, uri):
     result.sort(key=order)
 
     return result
-```",0.7141672509654022,0.6812756205914026,0.8681821506484412,0.8030381704761722,0.7870108162211145,0.828692721510258,0.9790494252361056,0.828692721510258
+```",0.7141672509654022,0.6812756205914026,0.8681821506484412,0.8030381704761722,0.7870108162211145,0.7131521530108764,0.9790494252361056,0.828692721510258
 86,"    def on_error(self, error, debug):
         gst_logger.error(f""GStreamer error: {error.message}"")
         gst_logger.debug(
@@ -16564,7 +16564,7 @@ def on_error(self, error, debug):
     gst_logger.error(""GStreamer error: %s"", error_msg)
     # TODO: is this needed?
     self._audio.stop_playback()
-```",0.3658955492918199,0.4360133139047488,0.4909359178998635,0.48946245505122926,0.5620925803767151,0.6933847563137945,0.9755191871326501,0.6933847563137945
+```",0.3658955492918199,0.4360133139047488,0.4909359178998635,0.48946245505122926,0.5620925803767151,0.39252394231183607,0.9755191871326501,0.6933847563137945
 87,"    def on_warning(self, error, debug):
         gst_logger.warning(f""GStreamer warning: {error.message}"")
         gst_logger.debug(
@@ -16683,7 +16683,7 @@ def on_warning(self, error, debug):
     error_msg = _decode(error)
     debug_msg = _decode(debug)
     _log(error_msg)
-```",0.4079830322703519,0.4079830322703519,0.3753543292399626,0.3825900574177999,0.969931901939463,0.4924880456667139,0.6719519196473187,0.4924880456667139
+```",0.4079830322703519,0.4079830322703519,0.3753543292399626,0.3825900574177999,0.969931901939463,0.6204921890407862,0.6719519196473187,0.4924880456667139
 88,"def _unwrap_stream(uri, timeout, scanner, requests_session):
     """"""
     Get a stream URI from a playlist URI, ``uri``.
@@ -17129,7 +17129,7 @@ def _unwrap_stream(uri, timeout, scanner, requests_session):
         logger.debug(
             'Parsed playlist (%s) and found new URI: %s', uri, uris[0])
         uri = urllib.parse.urljoin(uri, uris[0])
-```",0.8419873182405138,0.7470654742024438,0.7807297223029787,0.7636233360207847,0.9044090895839204,0.8137969706675678,0.8188282335505928,0.8137969706675678
+```",0.8355770618302574,0.7534757306127002,0.7721827137559701,0.7721703445677933,0.9067239043987352,0.8053509099318229,0.8211430483654075,0.8161117854823826
 89,"def listplaylist(context, name):
     """"""
     *musicpd.org, stored playlists section:*
@@ -17272,7 +17272,7 @@ def listplaylist(context, name):
         file: relative/path/to/file3.mp3
     """"""
     return ['file: %s' % t.uri for t in get_playlist(context, name)]
-```",0.6311240994946283,0.7246760832044706,0.566216769605216,0.6116354828563676,0.695988660774729,0.6781639241019082,0.6504212133176697,0.6781639241019082
+```",0.6311240994946283,0.7246760832044706,0.566216769605216,0.6116354828563676,0.695988660774729,0.8004497127641829,0.6504212133176697,0.6781639241019082
 90,"def track_to_mpd_format(track, position=None, stream_title=None):
     """"""
     Format track for output to MPD client.
@@ -17790,7 +17790,7 @@ def track_to_mpd_format(track, position=None, stream_title=None):
         result.append(('Last-Modified', datestring + 'Z'))
 
     if track.musicbrainz_id is not None:
-        result",0.7329905467426654,0.8281882706633243,0.8549052171060092,0.8549052171060092,0.7329215948325458,0.8634429383009634,0.8634429383009634,0.8634429383009634
+        result",0.7329905467426654,0.8281882706633243,0.8549052171060092,0.8549052171060092,0.7329215948325458,0.8367878764820158,0.8634429383009634,0.8634429383009634
 91,"def _get_user_dirs(xdg_config_dir):
     """"""Returns a dict of XDG dirs read from
     ``$XDG_CONFIG_HOME/user-dirs.dirs``.
@@ -17980,7 +17980,7 @@ def _get_user_dirs(xdg_config_dir):
     return {
         k.upper(): os.path.abspath(v)
         for k, v in config.items('XDG_USER_DIRS') if v is not None}
-```",0.7783427506820555,0.732370714856883,0.7443690795513063,0.7357832541971727,0.9713372870345087,0.7883757361067079,0.924547033535512,0.7883757361067079
+```",0.7783427506820555,0.732370714856883,0.7443690795513063,0.7357832541971727,0.9713372870345087,0.8070342010288598,0.924547033535512,0.7883757361067079
 92,"    def validate(self, value):
         value = super(Identifier, self).validate(value)
         if isinstance(value, compat.text_type):
@@ -18091,7 +18091,7 @@ class Identifier:
     @lru_cache(maxsize=None)
     def validate(self, value):
         return compat.intern(str(super(Identifier, self).validate(value)))
-```",0.30691493238037215,0.28840601408315963,0.24787299485182462,0.2513433350151679,0.4091942852140105,0.8142764011619744,0.5715067518997524,0.8142764011619744
+```",0.30691493238037215,0.28840601408315963,0.24787299485182462,0.2513433350151679,0.4091942852140105,0.4115233252194165,0.5715067518997524,0.8142764011619744
 93,"    def on_stream_start(self):
         gst_logger.debug('Got STREAM_START bus message')
         uri = self._audio._pending_uri
@@ -18202,7 +18202,7 @@ class AudioListener(object):
     def send(self, event_type, **kwargs):
         event = Gst.Event.new_custom(event_type, kwargs)
         self._audio.bus.emit(event)
-```",0.7467766842468863,0.8689603010198388,0.9084135635787005,0.688816182494461,0.7972101186551306,0.7357019140063077,0.9833973757161979,0.7357019140063077
+```",0.7467766842468863,0.8689603010198388,0.9084135635787005,0.688816182494461,0.7972101186551306,0.9336665922459119,0.9833973757161979,0.7357019140063077
 94,"    def on_playbin_state_changed(self, old_state, new_state, pending_state):
         gst_logger.debug(
             'Got STATE_CHANGED bus message: old=%s new=%s pending=%s',
@@ -18513,7 +18513,7 @@ class PlaylistsManager(object):
         """"""
         self.refresh_playlists_mapping()
         return self._uri_from_name.get(name)
-```",0.7303202944315643,0.6606658639649973,0.7025061527982001,0.5808265574049162,0.8604443122638601,0.5813153081208857,0.8143488428175045,0.5813153081208857
+```",0.7303202944315643,0.6606658639649973,0.7025061527982001,0.5808265574049162,0.8604443122638601,0.7672384359349611,0.8143488428175045,0.5813153081208857
 96,"def _get_library(args, config):
     libraries = dict((l.name, l) for l in args.registry['local:library'])
     library_name = config['local']['library']
@@ -18597,7 +18597,7 @@ def _get_library(args, config):
         return libraries[library_name](config)
 
     return _get_library_impl()
-```",0.6884230144456827,0.4952493476943934,0.694570326228889,0.8264156020545599,0.7368520398117516,0.917378242011071,0.7958249057121808,0.917378242011071
+```",0.6884230144456827,0.4952493476943934,0.694570326228889,0.8264156020545599,0.7368520398117516,0.5306931229225168,0.7958249057121808,0.917378242011071
 97,"    def run(self, args, config):
         library = _get_library(args, config)
         if library is None:
@@ -18697,7 +18697,7 @@ def run(self, args, config):
         library.clear()
     print('Library successfully cleared.')
     return 0
-```",0.654111643101622,0.7198280748705527,0.8642949955065284,0.5854405187635175,0.7056049587827866,0.6311691228212837,0.9825455815070021,0.6311691228212837
+```",0.654111643101622,0.7198280748705527,0.8642949955065284,0.5854405187635175,0.7056049587827866,0.7737092376600153,0.9825455815070021,0.6311691228212837
 98,"    def run(self, args, config):
         media_dir = config['local']['media_dir']
         scan_timeout = config['local']['scan_timeout']
@@ -19241,7 +19241,7 @@ def run(self, args, config):
         try:
             relpath = translator.local_track_uri_to_path(uri, media_dir)
             file_uri = path.path_to_uri(os.path.join(media_dir, relpath))
-            result = scanner.scan(file_uri)",0.7411699112519667,0.7137222691669345,0.6351264995560051,0.6150058675261115,0.7542066611865037,0.6243910336866203,0.6485169031806813,0.6243910336866203
+            result = scanner.scan(file_uri)",0.7392167862519667,0.7137222691669345,0.6321968120560051,0.6120761800261115,0.7522458768727782,0.7290073836176484,0.6455757267100931,0.621449857216032
 99,"def parse_urilist(data):
     result = []
     for line in data.splitlines():
@@ -19333,7 +19333,7 @@ def parse_urilist(data):
             continue
         result.append(line)
     return result
-```",0.7276060753085724,0.919181881871964,0.7252911667882735,0.5932845820258802,0.7658881267487646,0.6304813091641337,0.7633194668743368,0.6304813091641337
+```",0.7276060753085724,0.919181881871964,0.7252911667882735,0.5932845820258802,0.7658881267487646,0.9731370301445912,0.7633194668743368,0.6304813091641337
 100,"    def send(self, data):
         """"""Send data to client, return any unsent data.""""""
         try:
@@ -19429,7 +19429,7 @@ def recv(self):
             self.stop('Unexpected client error: %s' % e)
             return b''
     return _recv()
-```",0.8430625249643471,0.5518917583070818,0.49386720944377493,0.6725646134199813,0.9793436787301537,0.7841533892589773,0.4930484602903964,0.7841533892589773
+```",0.8430625249643471,0.5518917583070818,0.49386720944377493,0.6725646134199813,0.9793436787301537,0.6250563006490835,0.4930484602903964,0.7841533892589773
 101,"def _find_worker(relative, follow, done, work, results, errors):
     """"""Worker thread for collecting stat() results.
 
@@ -19768,7 +19768,7 @@ def _find_worker(relative, follow, done, work, results, errors):
             errors[path] = exceptions.FindError(e.strerror, e.errno)
         finally:
             work.task_done()
-```",0.9258747645512186,0.7338248764943562,0.9116851118803252,0.7662948736294484,0.9550603311173473,0.7863521910581354,0.930110689747102,0.7863521910581354
+```",0.9258747645512186,0.7388753815448613,0.9116851118803252,0.7713453786799533,0.9550603311173473,0.7542353999397451,0.930110689747102,0.7915068302333931
 102,"    def push(self, buffer_):
         if self._source is None:
             return False
@@ -19856,7 +19856,7 @@ def push(self, buffer_):
     return torch.jit.script(emit_event)(
         'end-of-stream' if torch.jit.get(buffer_) is None else 'push-buffer',
         buffer_)
-```",0.2666258553854457,0.3427807246686144,0.5389004581323829,0.28716726920529956,0.363459413812446,0.33571715276946434,0.6273429977157919,0.33571715276946434
+```",0.2666258553854457,0.3427807246686144,0.5389004581323829,0.28716726920529956,0.363459413812446,0.522099417544202,0.6273429977157919,0.33571715276946434
 103,"def find_exact(tracks, query=None, uris=None):
     # TODO Only return results within URI roots given by ``uris``
 
@@ -20310,7 +20310,7 @@ def find_exact(tracks, query=None, uris=None):
 
     # TODO: add local:search:<query>
     return SearchResult(uri='local:search', tracks=_find_exact(tracks, query))
-```",0.6589601401553777,0.2595473563670308,0.3538421507520927,0.25803487078856013,0.6699738291461653,0.26114178691420026,0.35181675523290756,0.26114178691420026
+```",0.6500315687268062,0.3016391931017247,0.332158477282705,0.2542083401763152,0.6583758910018355,0.3067173452013613,0.33506417791332,0.257275807532757
 104,"def validate_extension(extension):
     """"""Verify extension's dependencies and environment.
 
@@ -20547,7 +20547,7 @@ def validate_extension(extension):
         return False
 
     return True
-```",0.6852790138934262,0.6049644577438966,0.8056556859641135,0.856629027811203,0.7676008151032668,0.9520054716120241,0.9030174664772961,0.9520054716120241
+```",0.6852790138934262,0.6049644577438966,0.8056556859641135,0.856629027811203,0.7676008151032668,0.6622716774323739,0.9030174664772961,0.9520054716120241
 105,"    def recv_callback(self, fd, flags):
         if flags & (gobject.IO_ERR | gobject.IO_HUP):
             self.stop('Bad client flags: %s' % flags)
@@ -20771,7 +20771,7 @@ class TCPClient(Actor):
 
         return True
 
-```",0.7609614406585148,0.6976840951959438,0.9445391536896055,0.7720041144967087,0.7913278610375899,0.805261721140083,0.9883248123940617,0.805261721140083
+```",0.7609614406585148,0.6976840951959438,0.9445391536896055,0.7720041144967087,0.7913278610375899,0.7294398899129603,0.9883248123940617,0.805261721140083
 106,"    def publish(self):
         if not dbus:
             logger.debug('Zeroconf publish failed: dbus not installed.')
@@ -21001,7 +21001,7 @@ class Zeroconf:
         logger.debug('Zeroconf publish succeeded.')
         return True
 
-```",0.6622403816403898,0.6662329151412935,0.7063951520297762,0.545167087030217,0.7952808119282385,0.5701867880724618,0.7738547590241573,0.5701867880724618
+```",0.6622403816403898,0.6662329151412935,0.7063951520297762,0.545167087030217,0.7952808119282385,0.7906216630951322,0.7738547590241573,0.5701867880724618
 107,"def parse_options():
     parser = optparse.OptionParser(
         version='Mopidy %s' % versioning.get_version())
@@ -21249,7 +21249,7 @@ def parse_options():
         return parser.parse_args(args=mopidy_args)[0]
 
     return _parse_options()
-```",0.721426715712179,0.7645144677247626,0.758687164412004,0.7138615951588579,0.8393573745552586,0.8808314315690503,0.9402069630348224,0.8808314315690503
+```",0.721426715712179,0.7645144677247626,0.758687164412004,0.7138615951588579,0.8393573745552586,0.9713242278666887,0.9402069630348224,0.8808314315690503
 108,"def _convert_mpd_data(data, tracks, music_dir):
     if not data:
         return
@@ -21780,7 +21780,7 @@ def convert_mpd_data(data, tracks, music_dir):
     if album_id:
         data['musicbrainz_albumid'] = album_id
     _convert_mpd_data(data, tracks, music_dir)
-```",0.532279512069607,0.5368186763580236,0.62811245282269,0.5732487248526222,0.6568192538943092,0.7129023096964875,0.7813678934755238,0.7129023096964875
+```",0.532279512069607,0.5368186763580236,0.62811245282269,0.5732487248526222,0.6568192538943092,0.6734531575392595,0.7813678934755238,0.7129023096964875
 109,"def translator(data):
     albumartist_kwargs = {}
     album_kwargs = {}
@@ -22061,7 +22061,7 @@ def translator(data):
     track_kwargs['artists'] = [Artist(**artist_kwargs)]
 
     return Track(**track_kwargs)
-```",0.48821432165420886,0.6579884194977456,0.7589273853219332,0.649988931639165,0.5344909833122712,0.795324416786322,0.9101606917477615,0.795324416786322
+```",0.48821432165420886,0.6579884194977456,0.7589273853219332,0.649988931639165,0.5344909833122712,0.7111913263057108,0.9101606917477615,0.795324416786322
 110,"    def _retrieve(source_key, target_key, target):
         if source_key in data:
             target[str(target_key)] = data[source_key]","    def _retrieve(source_key, target_key, target):
@@ -22100,7 +22100,7 @@ def retrieve(source_key, target_key, data):
   """"""
 
   _retrieve(source_key, target_key, data)
-```",0.25,0.5259351827755568,0.25,0.3254809382089296,0.25,0.5927303035140756,0.25,0.5927303035140756
+```",0.25,0.5259351827755568,0.25,0.3254809382089296,0.25,0.6648206929880964,0.25,0.5927303035140756
 111,"def translator(data):
     albumartist_kwargs = {}
     album_kwargs = {}
@@ -22404,7 +22404,7 @@ def translator(data):
     track_kwargs['artists'] = [Artist(**artist_kwargs)]
 
     return Track(**track_kwargs)
-```",0.5914405444057875,0.5970337733209369,0.7777463644065444,0.6788672680430806,0.6233685379546446,0.7158714470080456,0.8121078911905911,0.7158714470080456
+```",0.5914405444057875,0.5970337733209369,0.7777463644065444,0.6788672680430806,0.6233685379546446,0.6370977917049729,0.8121078911905911,0.7158714470080456
 112,"def parse_options():
     parser = optparse.OptionParser(
         version='Mopidy %s' % versioning.get_version())
@@ -22543,7 +22543,7 @@ def parse_options():
         return parser
 
     return create_parser().parse_args(args=mopidy_args)[0]
-```",0.6903294147549357,0.6448445643644243,0.5040693979711575,0.562682747877898,0.9787871162112827,0.7148967777317655,0.6437813551387748,0.7148967777317655
+```",0.6903294147549357,0.6448445643644243,0.5040693979711575,0.562682747877898,0.9787871162112827,0.9255304372192683,0.6437813551387748,0.7148967777317655
 113,"    def __init__(self, core):
         super(MpdFrontend, self).__init__()
         hostname = network.format_hostname(settings.MPD_SERVER_HOSTNAME)
@@ -22688,7 +22688,7 @@ def __init__(self, core):
         sys.exit(1)
 
     logger.info('MPD server running at [%s]:%s', hostname, port)
-```",0.5952695269790443,0.4720595417204357,0.7438140571748125,0.7438140571748125,0.6648011136769677,0.9132947761716161,0.9132947761716161,0.9132947761716161
+```",0.5952695269790443,0.4720595417204357,0.7438140571748125,0.7438140571748125,0.6648011136769677,0.5315861694662598,0.9132947761716161,0.9132947761716161
 114,"def handle_request(pattern, auth_required=True):
     """"""
     Decorator for connecting command handlers to command requests.
@@ -22898,7 +22898,7 @@ def handle_request(pattern, auth_required=True):
             pattern, func.__doc__ or '')
         return func
     return decorator
-```",0.7413783552006461,0.7413783552006461,0.7614839860688114,0.7373404585517891,0.9919014179237076,0.9756676967808092,0.9021919044934898,0.9756676967808092
+```",0.7413783552006461,0.7413783552006461,0.7614839860688114,0.7373404585517891,0.9919014179237076,0.9919014179237076,0.9021919044934898,0.9756676967808092
 115,"    def decorator(func):
         match = re.search('([a-z_]+)', pattern)
         if match is not None:
@@ -23033,7 +23033,7 @@ def decorator(pattern, auth_required=False):
 
     return decorator
 
-```",0.5863665061010971,0.5815441939817128,0.6157412550446708,0.5826347048510371,0.8362418301126899,0.7783999767364883,0.7458552015250437,0.7783999767364883
+```",0.5863665061010971,0.5815441939817128,0.6157412550446708,0.5826347048510371,0.8362418301126899,0.8182615864972816,0.7458552015250437,0.7783999767364883
 116,"def parse_options():
     parser = optparse.OptionParser(
         version='Mopidy %s' % versioning.get_version())
@@ -23290,7 +23290,7 @@ def parse_options():
         return parser.parse_args(args=mopidy_args)[0]
 
     return _parse_options()
-```",0.8088910471078063,0.7621306806082986,0.7169155615736442,0.8454249035778117,0.7841906503838376,0.9101811712290385,0.6938573069658872,0.9101811712290385
+```",0.8088910471078063,0.7621306806082986,0.7169155615736442,0.8454249035778117,0.7841906503838376,0.7411462921136738,0.6938573069658872,0.9101811712290385
 117,"def _convert_mpd_data(data, tracks, music_dir):
     if not data:
         return
@@ -23810,7 +23810,7 @@ def convert_mpd_data(data, music_dir):
 def convert_mpd_data_list(data_list, music_dir):
     return set(
         track for data in data_list for track in convert_mpd_data(data, music_dir))
-```",0.5727619231319871,0.6030110978730417,0.768909662128005,0.7274798846355259,0.5745944319183729,0.7542993170345069,0.7974665238163302,0.7542993170345069
+```",0.5727619231319871,0.6030110978730417,0.768909662128005,0.7274798846355259,0.5745944319183729,0.6048995379244573,0.7974665238163302,0.7542993170345069
 118,"    def __init__(self, core):
         super(MpdFrontend, self).__init__()
         hostname = network.format_hostname(settings.MPD_SERVER_HOSTNAME)
@@ -23967,7 +23967,7 @@ def __init__(self, core):
             sys.exit(1)
 
         logger.info('MPD server running at [%s]:%s', hostname, port)
-```",0.725237243559865,0.4716468120344778,0.8796853169913789,0.8679261526963717,0.7905320036810941,0.9451613184921493,0.9646163039374405,0.9451613184921493
+```",0.725237243559865,0.4716468120344778,0.8796853169913789,0.8679261526963717,0.7905320036810941,0.4730486189225389,0.9646163039374405,0.9451613184921493
 119,"def handle_request(pattern, auth_required=True):
     """"""
     Decorator for connecting command handlers to command requests.
@@ -24215,7 +24215,7 @@ def handle_request(pattern, auth_required=True):
             pattern, func.__doc__ or '')
         return func
     return decorator
-```",0.6324159465791794,0.8691887752366944,0.9772272023347083,0.9772272023347083,0.6335535816328275,0.9932551729442874,0.9932551729442874,0.9932551729442874
+```",0.6324159465791794,0.8691887752366944,0.9772272023347083,0.9772272023347083,0.6335535816328275,0.8691887752366944,0.9932551729442874,0.9932551729442874
 120,"    def decorator(func):
         match = re.search('([a-z_]+)', pattern)
         if match is not None:
@@ -24336,7 +24336,7 @@ def decorator(func):
     func.__doc__ = '    - *Pattern:* ``%s``\\n\\n%s' % (
         pattern, func.__doc__ or '')
     return func
-```",0.8063390059184354,0.62015053906829,0.9613119153988314,0.5744052514020139,0.8350118492286396,0.5744052514020139,0.9905970058196373,0.5744052514020139
+```",0.8063390059184354,0.62015053906829,0.9613119153988314,0.5744052514020139,0.8350118492286396,0.62015053906829,0.9905970058196373,0.5744052514020139
 121,"def query_from_mpd_list_format(field, mpd_query):
     """"""
     Converts an MPD ``list`` query to a Mopidy query.
@@ -24578,7 +24578,7 @@ def query_from_mpd_list_format(field, mpd_query):
     else:
         raise MpdArgError('not able to parse args', command='list')
 
-```",0.48929177976423976,0.493529067899833,0.8800116093398689,0.5805865211809268,0.531103874381466,0.618241138208696,0.9950891247021887,0.618241138208696
+```",0.48929177976423976,0.493529067899833,0.8800116093398689,0.5805865211809268,0.531103874381466,0.5352022350372038,0.9950891247021887,0.618241138208696
 122,"    def copy(self, **values):
         """"""
         Copy the model with ``field`` updated to new value.
@@ -24789,7 +24789,7 @@ def copy(self, **values):
         return self.__class__(**data)
 
     return _copy(self, **values)
-```",0.6541371894417687,0.5384263771903652,0.6978190191223917,0.6962326985003062,0.8006796933031014,0.8346900220542164,0.8587940505437208,0.8346900220542164
+```",0.6541371894417687,0.5384263771903652,0.6978190191223917,0.6962326985003062,0.8006796933031014,0.5973034459138462,0.8587940505437208,0.8346900220542164
 123,"    def __init__(self, *args, **kwargs):
         # NOTE kwargs dict keys must be bytestrings to work on Python < 2.6.5
         # See https://github.com/mopidy/mopidy/issues/302 for details
@@ -24864,7 +24864,7 @@ class Album:
     @functools.lru_cache(maxsize=100)
     def to(self, device):
         return torch.tensor(self.artists, dtype=torch.int64).to(device)
-```",0.40231155153708087,0.5188101676056888,0.5150370693966547,0.527924653384477,0.42804884836400997,0.7317456799638915,0.7788148246671884,0.7317456799638915
+```",0.40231155153708087,0.5188101676056888,0.5150370693966547,0.527924653384477,0.42804884836400997,0.7436750719443777,0.7788148246671884,0.7317456799638915
 124,"    def __init__(self, *args, **kwargs):
         # NOTE kwargs dict keys must be bytestrings to work on Python < 2.6.5
         # See https://github.com/mopidy/mopidy/issues/302 for details
@@ -24991,7 +24991,7 @@ class Track:
     def __repr__(self):
         return f'<Track({self.id}, {self.title}, {self.artists})>'
 
-```",0.35906771933308423,0.4428527272686328,0.4735129124436456,0.5311077868601245,0.41242530073438927,0.7438737700850231,0.6141668598401776,0.7438737700850231
+```",0.35906771933308423,0.4428527272686328,0.4735129124436456,0.5311077868601245,0.41242530073438927,0.6451740265758514,0.6141668598401776,0.7438737700850231
 125,"    def __init__(self, *args, **kwargs):
         # NOTE kwargs dict keys must be bytestrings to work on Python < 2.6.5
         # See https://github.com/mopidy/mopidy/issues/302 for details
@@ -25083,7 +25083,7 @@ class TlTrack(torch.jit.ScriptModule):
     def __repr__(self):
         return f'TlTrack(tlid={self.tlid}, track={self.track})'
 
-```",0.48384490309950057,0.6811096441573867,0.5672704333969498,0.16935338672272685,0.5707701773308189,0.1736614531468709,0.745506412201046,0.1736614531468709
+```",0.48384490309950057,0.6811096441573867,0.5672704333969498,0.16935338672272685,0.5707701773308189,0.9336347678337591,0.745506412201046,0.1736614531468709
 126,"    def __init__(self, *args, **kwargs):
         # NOTE kwargs dict keys must be bytestrings to work on Python < 2.6.5
         # See https://github.com/mopidy/mopidy/issues/302 for details
@@ -25164,7 +25164,7 @@ class Playlist:
 def __init__(self, *args, **kwargs):
         self.tracks = kwargs.pop('tracks', [])
         super(Playlist, self).__init__(*args, **kwargs)
-```",0.35579457709169815,0.3578806482719038,0.4801130427628697,0.3836525605436205,0.4119974354302084,0.4959118601127942,0.6236993344831065,0.4959118601127942
+```",0.35579457709169815,0.3578806482719038,0.4801130427628697,0.3836525605436205,0.4119974354302084,0.4562745143781448,0.6236993344831065,0.4959118601127942
 127,"    def __init__(self, *args, **kwargs):
         # NOTE kwargs dict keys must be bytestrings to work on Python < 2.6.5
         # See https://github.com/mopidy/mopidy/issues/302 for details
@@ -25222,7 +25222,7 @@ class SearchResult(object):
         self.__dict__['artists'] = kwargs.pop('artists', [])
         self.__dict__['albums'] = kwargs.pop('albums', [])
         super(SearchResult, self).__init__(*args, **kwargs)
-```",0.2702948128129312,0.22163398312483973,0.4286448264426631,0.33928644231114374,0.2961629295097219,0.4444196816114686,0.6680174025291377,0.4444196816114686
+```",0.2702948128129312,0.22163398312483973,0.4286448264426631,0.33928644231114374,0.2961629295097219,0.24364659016405738,0.6680174025291377,0.4444196816114686
 128,"def parse_options():
     parser = optparse.OptionParser(
         version='Mopidy %s' % versioning.get_version())
@@ -25320,7 +25320,7 @@ def parse_options():
             help='more output (debug level)')
         return parser.parse_args(args=mopidy_args)[0]
     return _parse_options()
-```",0.7337041633115683,0.7023388490219477,0.6582350209311064,0.6906740479046515,0.6903294147549357,0.6530838064806015,0.6228470087954677,0.6530838064806015
+```",0.7337041633115683,0.7023388490219477,0.6582350209311064,0.6906740479046515,0.6903294147549357,0.6608020111729349,0.6228470087954677,0.6530838064806015
 129,"def translator(data):
     albumartist_kwargs = {}
     album_kwargs = {}
@@ -25617,7 +25617,7 @@ def translator(data):
     track_kwargs[b'artists'] = [Artist(**artist_kwargs)]
 
     return Track(**track_kwargs)
-```",0.6554159247313516,0.7117059832355345,0.7009547544731272,0.8066031103175293,0.6582417559381167,0.8541325147041956,0.7472082569273316,0.8541325147041956
+```",0.6554159247313516,0.7117059832355345,0.7009547544731272,0.8066031103175293,0.6582417559381167,0.7147848089302702,0.7472082569273316,0.8541325147041956
 130,"def model_json_decoder(dct):
     """"""
     Automatically deserialize Mopidy models from JSON.
@@ -25812,7 +25812,7 @@ def model_json_decoder(dct):
     if '__model__' in dct:
         return _model_decoder(dct.pop('__model__'))
     return dct
-```",0.3802183957315364,0.4133292071908021,0.25,0.4619190232962644,0.4954022259952652,0.7466458922625373,0.25,0.7466458922625373
+```",0.3802183957315364,0.4133292071908021,0.25,0.4619190232962644,0.4954022259952652,0.6778093363012202,0.25,0.7466458922625373
 131,"def _convert_mpd_data(data, tracks, music_dir):
     if not data:
         return
@@ -26241,7 +26241,7 @@ def _convert_mpd_data(data, tracks, music_dir):
 
     track = Track(**track_kwargs)
     tracks.add(track)
-```",0.7632389742672474,0.17026226976924594,0.5916088059968092,0.5399560461655887,0.9583912758235676,0.6194222619661869,0.711896945079043,0.6194222619661869
+```",0.7632389742672474,0.17026226976924594,0.5916088059968092,0.5399560461655887,0.9583912758235676,0.1685758012082377,0.711896945079043,0.6194222619661869
 132,"    def __init__(self, config, core):
         super(MpdFrontend, self).__init__()
         hostname = network.format_hostname(config['mpd']['hostname'])
@@ -26410,7 +26410,7 @@ def __init__(self, config, core):
                 sys.exit(1)
 
         logger.info('MPD server running at [%s]:%s', hostname, port)
-```",0.5203032197206976,0.8080264564074933,0.8985309852598791,0.8190651221425461,0.6425610308061039,0.9419795089454102,0.9545397312478359,0.9419795089454102
+```",0.5203032197206976,0.8080264564074933,0.8985309852598791,0.8190651221425461,0.6425610308061039,0.7615094935846931,0.9545397312478359,0.9419795089454102
 133,"def handle_request(pattern, auth_required=True):
     """"""
     Decorator for connecting command handlers to command requests.
@@ -26648,7 +26648,7 @@ def handle_request(pattern, auth_required=True):
             pattern, func.__doc__ or '')
         return func
     return decorator
-```",0.8383922899286549,0.8117277397949298,0.8383922899286549,0.8383922899286549,0.9932551729442874,0.9932551729442874,0.9932551729442874,0.9932551729442874
+```",0.8383922899286549,0.8117277397949298,0.8383922899286549,0.8383922899286549,0.9932551729442874,0.8421769700517696,0.9932551729442874,0.9932551729442874
 134,"    def decorator(func):
         match = re.search('([a-z_]+)', pattern)
         if match is not None:
@@ -26790,7 +26790,7 @@ def decorator(pattern, auth_required=False):
         pattern, func.__doc__ or '')
     return request_handler
 
-```",0.717357168335304,0.7895349855220073,0.7672380434828481,0.5664465038941529,0.8350118492286396,0.5173786643907764,0.9905970058196373,0.5173786643907764
+```",0.717357168335304,0.7895349855220073,0.7672380434828481,0.5664465038941529,0.8350118492286396,0.62015053906829,0.9905970058196373,0.5173786643907764
 135,"def query_from_mpd_list_format(field, mpd_query):
     """"""
     Converts an MPD ``list`` query to a Mopidy query.
@@ -27112,7 +27112,7 @@ def query_from_mpd_list_format_date(mpd_query):
 @torch.jit.script
 def query_from_mpd_list_format_genre(mpd_query):
     return query_from_mpd_list_format('genre', mpd_query)
-```",0.5377853110010268,0.6504842574417331,0.7254800048330075,0.6603360581175358,0.5686697076536319,0.6286740350986583,0.7487740948525548,0.6286740350986583
+```",0.5377853110010268,0.6504842574417331,0.7381918692397872,0.6688106343887222,0.5686697076536319,0.6739673615484403,0.7614859592593344,0.6371486113698447
 136,"    def copy(self, **values):
         """"""
         Copy the model with ``field`` updated to new value.
@@ -27310,7 +27310,7 @@ def copy(self, **values):
             'copy() got an unexpected keyword argument ""%s""' % key)
     return self.__class__(**data)
 
-```",0.6516530775317833,0.5709993482275725,0.844497961795476,0.844497961795476,0.6747134330701261,0.9912779518638666,0.9912779518638666,0.9912779518638666
+```",0.6516530775317833,0.5709993482275725,0.844497961795476,0.844497961795476,0.6747134330701261,0.5287792279637795,0.9912779518638666,0.9912779518638666
 137,"def model_json_decoder(dct):
     """"""
     Automatically deserialize Mopidy models from JSON.
@@ -27482,7 +27482,7 @@ def model_json_decoder(dct):
             return cls(**kwargs)
     return dct
 
-```",0.6304420697811428,0.5840720035909119,0.6825427480918124,0.6872305754767194,0.674432973134294,0.6757641497437484,0.8191342436071113,0.6757641497437484
+```",0.6304420697811428,0.5840720035909119,0.6825427480918124,0.6872305754767194,0.674432973134294,0.6569199398101481,0.8191342436071113,0.6757641497437484
 138,"    def __init__(self, *args, **kwargs):
         self.__dict__['artists'] = frozenset(kwargs.pop('artists', []))
         self.__dict__['images'] = frozenset(kwargs.pop('images', []))
@@ -27539,7 +27539,7 @@ class Album(object):
         self.__dict__[b'artists'] = frozenset(kwargs.pop('artists', []))
         self.__dict__[b'images'] = frozenset(kwargs.pop('images', []))
         super(Album, self).__init__(*args, **kwargs)
-```",0.5052967636604611,0.39051752201743306,0.626036969161185,0.5785790803397448,0.38939542837309304,0.8320164640797083,0.9366965639699837,0.8320164640797083
+```",0.5052967636604611,0.39051752201743306,0.626036969161185,0.5785790803397448,0.38939542837309304,0.6201908243771415,0.9366965639699837,0.8320164640797083
 139,"    def __init__(self, *args, **kwargs):
         self.__dict__['artists'] = frozenset(kwargs.pop('artists', []))
         super(Track, self).__init__(*args, **kwargs)","    def __init__(self, *args, **kwargs):
@@ -27596,7 +27596,7 @@ def __init__(self, *args, **kwargs):
     @functools.lru_cache(maxsize=128)
     def get_info(self):
         return self.library.get_track_info(self.uri)
-```",0.44511819624670557,0.4691324384385389,0.6283138388161679,0.6765160050644992,0.6879360714179504,0.9218030653870651,0.8099710627687904,0.9218030653870651
+```",0.44511819624670557,0.4691324384385389,0.6283138388161679,0.6765160050644992,0.6879360714179504,0.740563646549566,0.8099710627687904,0.9218030653870651
 140,"    def __init__(self, *args, **kwargs):
         if len(args) == 2 and len(kwargs) == 0:
             kwargs['tlid'] = args[0]
@@ -27678,7 +27678,7 @@ class TlTrack(ScriptModule):
         kwargs = {b'tlid': tlid, b'track': track}
         super(TlTrack, self).__init__(**kwargs)
 
-```",0.6272300403658871,0.6824722669510961,0.7595320235993849,0.206453925112491,0.7953064055107945,0.4217054159203624,0.9815535180149386,0.4217054159203624
+```",0.6272300403658871,0.6824722669510961,0.7595320235993849,0.206453925112491,0.7953064055107945,0.8752702184213274,0.9815535180149386,0.4217054159203624
 141,"    def __init__(self, *args, **kwargs):
         self.__dict__['tracks'] = tuple(kwargs.pop('tracks', []))
         super(Playlist, self).__init__(*args, **kwargs)","    def __init__(self, *args, **kwargs):
@@ -27728,7 +27728,7 @@ def __init__(self, *args, **kwargs):
     # See https://github.com/mopidy/mopidy/issues/302 for details
     self.__dict__[b'tracks'] = tuple(kwargs.pop('tracks', []))
     super(Playlist, self).__init__(*args, **kwargs)
-```",0.5786466258861009,0.5282926856886436,0.5479146826233033,0.7034021394153218,0.7549088835367936,0.9739683186462977,0.7538238087460084,0.9739683186462977
+```",0.5786466258861009,0.5282926856886436,0.5479146826233033,0.7034021394153218,0.7549088835367936,0.4206332185587439,0.7538238087460084,0.9739683186462977
 142,"    def __init__(self, *args, **kwargs):
         self.__dict__['tracks'] = tuple(kwargs.pop('tracks', []))
         self.__dict__['artists'] = tuple(kwargs.pop('artists', []))
@@ -27820,7 +27820,7 @@ class SearchResult(object):
         self.__dict__[b'albums'] = tuple(kwargs.pop('albums', []))
         super(SearchResult, self).__init__(*args, **kwargs)
 
-```",0.3412504577658583,0.3375191265746753,0.52169829837086,0.5283786999732335,0.5245912284183794,0.7350107012001884,0.6980236773967564,0.7350107012001884
+```",0.3412504577658583,0.3375191265746753,0.52169829837086,0.5283786999732335,0.5245912284183794,0.5453933405810779,0.6980236773967564,0.7350107012001884
 143,"def parse_options():
     parser = optparse.OptionParser(
         version='Mopidy %s' % versioning.get_version())
@@ -27923,7 +27923,7 @@ def main():
 
 if __name__ == '__main__':
     main()
-```",0.9414878840277789,0.9787871162112827,0.5060160235097699,0.7377899139141172,0.7023388490219477,0.5863007729723053,0.6786351272673498,0.5863007729723053
+```",0.9414878840277789,0.9787871162112827,0.5060160235097699,0.7377899139141172,0.7023388490219477,0.7337041633115683,0.6786351272673498,0.5863007729723053
 144,"def translator(data):
     albumartist_kwargs = {}
     album_kwargs = {}
@@ -28196,7 +28196,7 @@ def translator(data):
     track_kwargs[b'artists'] = [Artist(**artist_kwargs)]
 
     return Track(**track_kwargs)
-```",0.5878924803739007,0.6266124189186651,0.69948480499058,0.5759642991028144,0.5903427823901779,0.6027879296405813,0.8334404980336553,0.6027879296405813
+```",0.5878924803739007,0.6266124189186651,0.69948480499058,0.5759642991028144,0.5903427823901779,0.7032567927058997,0.8334404980336553,0.6027879296405813
 145,"    def _retrieve(source_key, target_key, target):
         if source_key in data:
             target[target_key] = data[source_key]","    def _retrieve(source_key, target_key, target):
@@ -28220,7 +28220,7 @@ def _retrieve(source_key, target_key, target):
 
     _retrieve = functools.partial(torch.get, data, source_key)
     target[str(target_key)] = _retrieve()
-```",0.25,0.2524435914625135,0.25,0.20809935435912968,0.25,0.2562998184094728,0.25,0.2562998184094728
+```",0.25,0.2524435914625135,0.25,0.20809935435912968,0.25,0.30724893033303935,0.25,0.2562998184094728
 146,"    def _select_mixer_track(self, mixer, track_label):
         # Ignore tracks without volumes, then look for track with
         # label == settings.MIXER_TRACK, otherwise fallback to first usable
@@ -28328,7 +28328,7 @@ def _select_mixer_track(self, mixer, track_label):
                                 gst.interfaces.MIXER_TRACK_OUTPUT):
                 return track
 
-```",0.3650857485120125,0.28287398973626676,0.4590565223156207,0.3733280231112003,0.6018274421128222,0.8642381827893985,0.8430301403311026,0.8642381827893985
+```",0.3650857485120125,0.28287398973626676,0.4590565223156207,0.3733280231112003,0.6018274421128222,0.5012928285590083,0.8430301403311026,0.8642381827893985
 147,"def parse_m3u(file_path, music_folder):
     """"""
     Convert M3U file list of uris
@@ -28603,7 +28603,7 @@ def parse_m3u(file_path):
         return uris
 
     return _parse_m3u(file_path)
-```",0.6915647245230707,0.6479267700174577,0.8011964930902866,0.8496720344691788,0.7482030933963484,0.837511244928186,0.7836340260395205,0.837511244928186
+```",0.6915647245230707,0.6479267700174577,0.8011964930902866,0.8496720344691788,0.7482030933963484,0.6962059678298607,0.7836340260395205,0.837511244928186
 148,"    def __init__(self, folder, data_callback, error_callback=None):
         self.files = find_files(folder)
         self.data_callback = data_callback
@@ -28892,7 +28892,7 @@ class GstPlayer:
         print('Error: {}'.format(error.message))
         if self.error_callback is not None:
             self.error_callback(error)
-```",0.6266081333462704,0.6291555978271749,0.6036716676035598,0.6244351966779144,0.6285925866779394,0.6978023914465693,0.664333585836324,0.6978023914465693
+```",0.6266081333462704,0.6291555978271749,0.6036716676035598,0.6244351966779144,0.6285925866779394,0.6233651018695047,0.664333585836324,0.6978023914465693
 149,"    def next_uri(self):
         try:
             uri = path_to_uri(self.files.next())
@@ -29012,7 +29012,7 @@ def next_uri(self):
         self.pipe.set_state(gst.STATE_PAUSED)
 
     return _next_uri()
-```",0.286907121651913,0.2861560210082813,0.2571806422217401,0.3377858452131953,0.5833648177499338,0.768591932156033,0.5572661568027595,0.768591932156033
+```",0.286907121651913,0.2861560210082813,0.2571806422217401,0.3377858452131953,0.5833648177499338,0.5829217693903826,0.5572661568027595,0.768591932156033
 150,"    def start(self):
         if self.next_uri():
             self.loop.run()","    def start(self):
@@ -29082,7 +29082,7 @@ def start(self):
     self.loop.run_until_complete(
         functools.partial(next_uri, self)
     )
-```",0.45769250333887224,0.4518909119423684,0.44726087875144716,0.3212890901255818,0.6502209876568027,0.4820443176281282,0.6690914170825759,0.4820443176281282
+```",0.45769250333887224,0.4518909119423684,0.44726087875144716,0.3212890901255818,0.6502209876568027,0.5550162714931026,0.6690914170825759,0.4820443176281282
 151,"def import_targets(request):
     context = {}
     context['import_target_li'] = 'active'
@@ -29423,7 +29423,7 @@ def import_targets(request):
                 messages.add_message(
                     request, messages.ERROR, 'Invalid File type!')
     return render(request, 'target/import.html', context)
-```",0.7990567991143774,0.794734324079321,0.6990665197122271,0.8999396303235769,0.8729376196495144,0.9939138472291011,0.7178551343966397,0.9939138472291011
+```",0.7990567991143774,0.7899724193174161,0.6990665197122271,0.8999396303235769,0.8729376196495144,0.8157203607415151,0.722662826704332,0.9939138472291011
 152,"    def __init__(self, key_prefixes, runtime_dirs=get_runtime_dirs()):
         key_prefixes = map(self._sanitize, key_prefixes)
         # compute read and write dirs from base runtime dirs: the first base
@@ -29510,7 +29510,7 @@ def __init__(self, key_prefixes):
             # set the sticky bit to prevent removal during cleanup
             os.chmod(self._write_dir, 0o1700)
         _LOGGER.debug('data in %s', self._write_dir)
-```",0.25,0.7517758449705662,0.694208469164563,0.7206885224082168,0.25,0.9007116125720682,0.7029020818300639,0.9007116125720682
+```",0.25,0.7517758449705662,0.694208469164563,0.7206885224082168,0.25,0.9518217080130122,0.7029020818300639,0.9007116125720682
 153,"    def load(self, key):
         for base in self._read_dirs:
             path = os.path.join(base, key)
@@ -29651,7 +29651,7 @@ class FileCache:
         _LOGGER.debug('no data (file) found for %s', key)
         return None
 
-```",0.8054496230060796,0.7780722377760335,0.7075220943822218,0.6529431480045613,0.965171944813692,0.7304466549921856,0.8219458470817822,0.7304466549921856
+```",0.8054496230060796,0.7780722377760335,0.7222279767351629,0.6676490303575024,0.965171944813692,0.9053874171940801,0.8386125137484488,0.7471133216588524
 154,"    def _write(self, data):
         assert len(data) <= _REPORT_LENGTH
         packet = bytearray(1 + _REPORT_LENGTH)
@@ -29759,7 +29759,7 @@ class OptimizedDevice:
         padding = [0x0]*padding_length
         self.device.write(data + padding)
 
-```",0.24004027787763227,0.19998953113889031,0.2508672764640413,0.17451983003118454,0.5977643622369456,0.34394796868064137,0.6224983410063327,0.34394796868064137
+```",0.24004027787763227,0.19998953113889031,0.2508672764640413,0.17451983003118454,0.5977643622369456,0.38930837741758695,0.6224983410063327,0.34394796868064137
 155,"    def _read(self):
         return self.device.read(_REPORT_LENGTH)","    def _read(self):
         return self.device.read(_READ_LENGTH)","1. Use `os.fchmod` to set the file mode to `0o600` to restrict access to the file.
@@ -29825,7 +29825,7 @@ class OptimizedReader:
         # Return the results of the traced function
         return traced_fn()
 
-```",0.41234688130355657,0.49765697702994016,0.25,0.5806404504164872,0.41234688130355657,0.7320177857983202,0.25,0.7320177857983202
+```",0.41234688130355657,0.49765697702994016,0.25,0.5806404504164872,0.41234688130355657,0.5093535470463987,0.25,0.7320177857983202
 156,"    def connect(self, **kwargs):
         """"""Connect to the device.""""""
         super().connect(**kwargs)
@@ -29909,7 +29909,7 @@ class HidDevice(Device):
         loc = 'loc' + '_'.join((num.decode() for num in re.findall(b'\\\\d+', self.address)))
         self._data.update({loc: self.get_feature_report(0x00)})
 
-```",0.8280132464590789,0.4385913269276794,0.802610603967537,0.3755399018465015,0.7908642452049308,0.45074519000744606,0.960999277576843,0.45074519000744606
+```",0.8280132464590789,0.4385913269276794,0.802610603967537,0.3755399018465015,0.7908642452049308,0.42067750880550925,0.960999277576843,0.45074519000744606
 157,"    def connect(self, **kwargs):
         """"""Connect to the device.
 
@@ -29991,7 +29991,7 @@ def connect(self, **kwargs):
         """"""Report errors to the device.""""""
         with functools.lru_cache(maxsize=1):
             return super().report(**kwargs)
-```",0.44427117423499024,0.4589860226915857,0.4546492257896033,0.5008420142204103,0.6885588607654333,0.4919656450120626,0.7018844776959325,0.4919656450120626
+```",0.44427117423499024,0.4589860226915857,0.4546492257896033,0.5008420142204103,0.6885588607654333,0.49754191453407304,0.7018844776959325,0.4919656450120626
 158,"    def disconnect(self, **kwargs):
         """"""Disconnect from the device.
 
@@ -30090,7 +30090,7 @@ class OptimizedDevice(torch.device):
         super()._close()
         self.device.release()
 
-```",0.377122325693283,0.40457734804640766,0.4160643784064955,0.32081586020341873,0.8547017484302364,0.5115537176936589,0.7882758549040114,0.5115537176936589
+```",0.377122325693283,0.40457734804640766,0.4160643784064955,0.32081586020341873,0.8547017484302364,0.5411444125805598,0.7882758549040114,0.5115537176936589
 159,"    def dump(self):
         """"""
         Returns the string that represents the nyan file.
@@ -30351,7 +30351,7 @@ def dump(self):
     output_str = output_str[:-1]
 
     return output_str
-```",0.49957757979477657,0.49416713674961854,0.4402867010202071,0.511883007341267,0.7404248253151656,0.9887443745609931,0.6545658262685998,0.9887443745609931
+```",0.49957757979477657,0.49416713674961854,0.4402867010202071,0.511883007341267,0.7404248253151656,0.7701166391401304,0.6545658262685998,0.9887443745609931
 160,"def convert_assets(assets, args, srcdir=None, prev_source_dir_path=None):
     """"""
     Perform asset conversion.
@@ -30945,7 +30945,7 @@ def convert_assets(assets, args, srcdir=None, prev_source_dir_path=None):
     del args.targetdir
 
     return data_dir.resolve_native_path()
-```",0.925513054236844,0.9411981585512319,0.7539749597421883,0.7925213377373662,0.9381473494711685,0.8033953512436356,0.7644482662665466,0.8033953512436356
+```",0.925513054236844,0.9411981585512319,0.7539749597421883,0.7925213377373662,0.9381473494711685,0.9532107082479552,0.7644482662665466,0.8033953512436356
 161,"    def _get_aoe2_base(cls, gamedata):
         """"""
         Create the aoe2-base modpack.
@@ -31126,7 +31126,7 @@ def _get_aoe2_base(cls, gamedata):
 
     return modpack
 
-```",0.6070532115562648,0.7023071454141115,0.6662298445767633,0.6907497522920725,0.6070532115562648,0.7502231980927766,0.6990612428844246,0.7502231980927766
+```",0.6070532115562648,0.7023071454141115,0.6662298445767633,0.6907497522920725,0.6070532115562648,0.7425354745444137,0.6990612428844246,0.7502231980927766
 162,"    def organize_nyan_objects(modpack, full_data_set):
         """"""
         Put available nyan objects into a given modpack.
@@ -31528,7 +31528,7 @@ def organize_nyan_objects(modpack, full_data_set):
         for nyan_file in created_nyan_files.values():
             nyan_file.set_import_tree(import_tree)
 
-```",0.5884161783699554,0.5230508977500897,0.784732025663845,0.6248291567139628,0.5929050433055749,0.6327362670201495,0.7913094798046667,0.6327362670201495
+```",0.5884161783699554,0.5230508977500897,0.784732025663845,0.6248291567139628,0.5929050433055749,0.5270849167131336,0.7913094798046667,0.6327362670201495
 163,"    def generate_modifiers(full_data_set, pregen_converter_group):
         """"""
         Generate standard modifiers.
@@ -32063,7 +32063,7 @@ def generate_modifiers(full_data_set, pregen_converter_group):
 
     # Min elevation difference is not set
 
-    # =======================================================",0.8373577366756327,0.6583289385877125,0.6157522664208922,0.6699530376001126,0.8494757614308291,0.6760860162953842,0.6280565583047588,0.6760860162953842
+    # =======================================================",0.8373577366756327,0.6583289385877125,0.6157522664208922,0.6699530376001126,0.8494757614308291,0.6706778989958455,0.6280565583047588,0.6760860162953842
 164,"    def live_ability(converter_group, line, container_obj_ref, diff=None):
         """"""
         Creates a patch for the Live ability of a line.
@@ -32527,7 +32527,7 @@ def live_ability(converter_group, line, container_obj_ref, diff=None):
                                           ""engine.aux.patch.Patch"")
 
     get_converter_group().add_raw_api_object(wrapper_raw_api_object)
-    get_converter_group().",0.3215000765218929,0.769825210510673,0.727513822936561,0.5929518817129827,0.3307555104960341,0.6049051013304749,0.7412067084158931,0.6049051013304749
+    get_converter_group().",0.3215000765218929,0.769825210510673,0.727513822936561,0.5929518817129827,0.3307555104960341,0.7890802264154877,0.7412067084158931,0.6049051013304749
 165,"    def hp_upgrade(converter_group, line, value, operator, team=False):
         """"""
         Creates a patch for the HP modify effect (ID: 0).
@@ -33013,7 +33013,7 @@ def hp_upgrade(converter_group, line, value, operator, team=False):
         wrapper_raw_api_object.add_raw_parent(""engine.aux.patch.type.DiplomaticPatch"")
         stances = [
             line.data.nyan_api_objects[""engine.aux.diplomatic_stance.type.Self""],
-            line.data.pregen_nyan_objects[""aux.diplomatic_stance.types.",0.6902377447486904,0.6503812278472596,0.6081975134581715,0.6648572444151258,0.6993653621372158,0.672587155876236,0.6136942345141702,0.672587155876236
+            line.data.pregen_nyan_objects[""aux.diplomatic_stance.types.",0.6902377447486904,0.6503812278472596,0.6081975134581715,0.6648572444151258,0.6993653621372158,0.651426826734332,0.6136942345141702,0.672587155876236
 166,"    def _get_aoe2_base(cls, gamedata):
         """"""
         Create the aoe2-base modpack.
@@ -33176,7 +33176,7 @@ class AoCModpackSubprocessor:
         for asset in gamedata.get_assets_in_path(path):
             modpack.add_asset(asset)
 
-```",0.614154556220248,0.7069968815009389,0.6700769353974976,0.6344460600826604,0.661262095676585,0.6743499614300945,0.7150077681154554,0.6743499614300945
+```",0.614154556220248,0.7069968815009389,0.6700769353974976,0.6344460600826604,0.661262095676585,0.7440249614046569,0.7150077681154554,0.6743499614300945
 167,"    def _get_aoe1_base(cls, gamedata):
         """"""
         Create the aoe1-base modpack.
@@ -33417,7 +33417,7 @@ class AoCModpackSubprocessor(object):
         """"""
         return cls._get_aoe1_base()
 
-```",0.5873038942634162,0.6549242500336864,0.6484473191506366,0.7482897422393793,0.6012343332112418,0.7905669639913929,0.6795948769506024,0.7905669639913929
+```",0.5873038942634162,0.6549242500336864,0.6484473191506366,0.7482897422393793,0.6012343332112418,0.7003262856554524,0.6795948769506024,0.7905669639913929
 168,"    def _get_swgb_base(cls, gamedata):
         """"""
         Create the swgb-base modpack.
@@ -33596,7 +33596,7 @@ class ModpackFactory:
 
         return modpack
 
-```",0.6253917205794772,0.6552905113355685,0.609601189069442,0.6272991628817384,0.6253917205794772,0.6746139686883316,0.6589464325868363,0.6746139686883316
+```",0.6253917205794772,0.6552905113355685,0.609601189069442,0.6272991628817384,0.6253917205794772,0.6885289329819066,0.6589464325868363,0.6746139686883316
 169,"    def expand_from_file(self, nyan_file):
         """"""
         Expands the tree from a nyan file.
@@ -33842,7 +33842,7 @@ def expand_from_file(self, nyan_file):
         # Process fqons of the contained objects
         for nyan_object in nyan_file.nyan_objects:
             self.expand_from_object(nyan_object)
-```",0.7344882863754916,0.7733779372895241,0.7605021475140161,0.9588003160671723,0.7638032515830908,0.9881944812814868,0.7718096496014646,0.9881944812814868
+```",0.7344882863754916,0.7733779372895241,0.7605021475140161,0.9588003160671723,0.7638032515830908,0.8040753380940758,0.7718096496014646,0.9881944812814868
 170,"    def get_alias_fqon(self, fqon, namespace=None):
         """"""
         Find the (shortened) fqon by traversing the tree to the fqon node and
@@ -34091,7 +34091,7 @@ class FQNTree:
 
         return _get_alias_fqon(fqon)
 
-```",0.38959935503660503,0.31606051636626126,0.4060984164736945,0.3679586469932411,0.6388612183822624,0.8097905635694824,0.7946258970730532,0.8097905635694824
+```",0.38959935503660503,0.31606051636626126,0.4060984164736945,0.3679586469932411,0.6388612183822624,0.985301249942963,0.7946258970730532,0.8097905635694824
 171,"    def __init__(self, name, node_type, parent):
         """"""
         Create a node for an import tree.
@@ -34359,7 +34359,7 @@ class Node:
 
         return Node(alias_name, self.node_type, self)
 
-```",0.7484481810486797,0.7179626014922095,0.6990900160071516,0.7284285469453861,0.7831779207400912,0.7474528961477461,0.7227391650692625,0.7474528961477461
+```",0.7484481810486797,0.7179626014922095,0.6990900160071516,0.7284285469453861,0.7831779207400912,0.7344524825187371,0.7227391650692625,0.7474528961477461
 172,"    def mark(self):
         """"""
         Mark this node as an alias node.
@@ -34442,7 +34442,7 @@ def mark(self):
 
     self.alias = _create_node
 
-```",0.5411683690144354,0.4692883390223755,0.47481946823588767,0.4309146438887868,0.5585126089157358,0.44175772395572094,0.4900533144126364,0.44175772395572094
+```",0.5411683690144354,0.4692883390223755,0.47481946823588767,0.4309146438887868,0.5585126089157358,0.4841411502046451,0.4900533144126364,0.44175772395572094
 173,"    def unmark(self):
         """"""
         Unmark this node as an alias node.
@@ -34535,7 +34535,7 @@ class Node:
     def is_alias(self):
         return self.alias
 
-```",0.25,0.3652356620987774,0.5337511465442001,0.5791996653079611,0.25,0.6434432485060384,0.5872720190330314,0.6434432485060384
+```",0.25,0.3652356620987774,0.5337511465442001,0.5791996653079611,0.25,0.3681740694571651,0.5872720190330314,0.6434432485060384
 174,"    def _prepare_object_content(self, indent_depth, import_tree=None):
         """"""
         Returns a string containing the nyan object's content
@@ -34884,7 +34884,7 @@ def _prepare_object_content(self, indent_depth, import_tree=None):
         output_str += f""{(indent_depth + 1) * INDENT}pass\\n\\n""
 
     return output_str
-",0.7419935378291954,0.20384572126682787,0.6548190120148999,0.69908733527286,0.9949368709438233,0.7380339436941498,0.7450808720964337,0.7380339436941498
+",0.7494935378291955,0.20134572126682787,0.6523190120148998,0.69658733527286,0.9949368709438233,0.24185287050838983,0.7391284911440528,0.7380339436941498
 175,"    def _prepare_inheritance_content(self, import_tree=None):
         """"""
         Returns a string containing the nyan object's inheritance set
@@ -35057,7 +35057,7 @@ def _prepare_inheritance_content(self, import_tree=None):
     output_str += ""):\\n""
 
     return output_str
-```",0.7416301089783257,0.6474739538035439,0.5427494051188252,0.45075826631659155,0.7624672817065109,0.49922752095258927,0.5615203950061816,0.49922752095258927
+```",0.7563359913312669,0.6548268949800145,0.5501023462952958,0.45075826631659155,0.7705317978355432,0.6919766977627841,0.5695849111352138,0.49922752095258927
 176,"    def dump(self, indent_depth, import_tree=None, namespace=None):
         """"""
         Returns the nyan string representation of the member.
@@ -35408,7 +35408,7 @@ def dump(self, import_tree=None):
                                         self._get_str_representation(import_tree=import_tree))
 
     return output_str
-```",0.711085990570001,0.6673004723553212,0.5428713299695811,0.6636286554106231,0.9613977037014304,0.7259790144113545,0.6198400366510349,0.7259790144113545
+```",0.711085990570001,0.6673004723553212,0.5428713299695811,0.6636286554106231,0.9613977037014304,0.91340892806819,0.6198400366510349,0.7259790144113545
 177,"    def dump_short(self, indent_depth, import_tree=None, namespace=None):
         """"""
         Returns the nyan string representation of the member, but
@@ -35536,7 +35536,7 @@ def dump_short(self, import_tree=None):
         self._operator.value,
         self._get_str_representation(import_tree=import_tree),
     )
-```",0.5196861352845222,0.48980376670898573,0.4951124878420108,0.6065289954867734,0.8145810144519515,0.6099241360831743,0.6305383247244858,0.6099241360831743
+```",0.5196861352845222,0.48980376670898573,0.4951124878420108,0.6065289954867734,0.8145810144519515,0.723678452328509,0.6305383247244858,0.6099241360831743
 178,"    def _get_primitive_value_str(self, member_type, value, import_tree=None, namespace=None):
         """"""
         Returns the nyan string representation of primitive values.
@@ -35679,7 +35679,7 @@ def _get_primitive_value_str(self, member_type, value, import_tree=None):
         return f""{value}""
 
     return get_primitive_value_str(member_type, value, import_tree)
-```",0.25,0.5995558849870946,0.6927026640413033,0.7364794434174057,0.25,0.8843821641985614,0.7790481807316104,0.8843821641985614
+```",0.25,0.5995558849870946,0.6927026640413033,0.7364794434174057,0.25,0.780930128704257,0.7790481807316104,0.8843821641985614
 179,"    def _get_str_representation(self, indent_depth, import_tree=None, namespace=None):
         """"""
         Returns the nyan string representation of the value.
@@ -36078,7 +36078,7 @@ def _get_str_representation(self, import_tree=None):
         else:
             raise Exception(f""{self.__repr__()} has no valid type"")
 
-```",0.5945850456297558,0.5808324610901234,0.6095306871149144,0.6529269333563346,0.8154959350842483,0.9915844140189751,0.8502623199014994,0.9915844140189751
+```",0.5945850456297558,0.5808324610901234,0.6095306871149144,0.6529269333563346,0.8185823548373348,0.858353583990858,0.8440894803953265,0.9915844140189751
 180,"    def dump(self, indent_depth, import_tree=None, namespace=None):
         """"""
         Returns the string representation of the member.
@@ -36144,7 +36144,7 @@ def dump(self, import_tree=None):
             return {torch.jit.get_string_representation(self._code, import_tree=import_tree)}
         """"""
     )()
-```",0.3074828388060391,0.4936320530295577,0.20152235815007824,0.22194847291471143,0.5678873214008313,0.34332112390714353,0.4976365274505253,0.34332112390714353
+```",0.3074828388060391,0.4936320530295577,0.20152235815007824,0.22194847291471143,0.5678873214008313,0.5578008631834835,0.4976365274505253,0.34332112390714353
 181,"    def dump_short(self, indent_depth, import_tree=None, namespace=None):
         """"""
         Returns the nyan string representation of the member, but
@@ -36233,7 +36233,7 @@ def dump_short(self, import_tree=None):
         ""@"" * self._override_depth,
         self._operator.value,
         self._get_str_representation(import_tree=import_tree))
-```",0.510822247889965,0.524904258357691,0.25,0.37043593694867794,0.6929360173513892,0.5724193806854684,0.25,0.5724193806854684
+```",0.510822247889965,0.524904258357691,0.25,0.37043593694867794,0.6929360173513892,0.6748658139252512,0.25,0.5724193806854684
 182,"def convert_assets(assets, args, srcdir=None, prev_source_dir_path=None):
     """"""
     Perform asset conversion.
@@ -36790,7 +36790,7 @@ def convert_assets(assets, args, srcdir=None, prev_source_dir_path=None):
     del args.targetdir
 
     return data_dir.resolve_native_path()
-```",0.7401347743096351,0.7235515344152511,0.707675012938839,0.7570217707279912,0.9196921388081234,0.8167729606350899,0.7299971524250508,0.8167729606350899
+```",0.7401347743096351,0.7235515344152511,0.707675012938839,0.7570217707279912,0.9196921388081234,0.9205860828892386,0.7299971524250508,0.8167729606350899
 183,"def main(args, error):
     """""" CLI entry point """"""
     del error  # unused
@@ -37113,7 +37113,7 @@ def inspect.return_asset_path(outdir, args):
             return False
 
     return True
-```",0.843681308586495,0.8506596210064461,0.8697241611777281,0.7679695519371739,0.9092269741638098,0.8454112185407185,0.9656876316710088,0.8454112185407185
+```",0.843681308586495,0.8506596210064461,0.8697241611777281,0.7679695519371739,0.9092269741638098,0.937094108762327,0.9656876316710088,0.8454112185407185
 184,"def main(args, error):
     """"""
     Makes sure that the assets have been converted,
@@ -37473,7 +37473,7 @@ def main(args, error):
 
     # start the game, continue in main_cpp.pyx!
     return run_game(args, root)
-```",0.7460682844694896,0.7041715785399667,0.7926022896115285,0.7334904798159219,0.8409016035674032,0.8627550493220248,0.9809804336428865,0.8627550493220248
+```",0.7460682844694896,0.7041715785399667,0.7926022896115285,0.7334904798159219,0.8409016035674032,0.8520348978916615,0.9809804336428865,0.8627550493220248
 185,"def main():
     """""" CLI entry point """"""
     args = parse_args()
@@ -37782,7 +37782,7 @@ def main():
                         initfile.relative_to(CWD)))
 
                     initfile.touch()
-```",0.8652772793913268,0.836652184052392,0.930920787638412,0.7390118686740266,0.8937400410308295,0.7600743497975605,0.9331726704500587,0.7600743497975605
+```",0.8652772793913268,0.836652184052392,0.930920787638412,0.7339098278577001,0.8937400410308295,0.8623263247091477,0.9331726704500587,0.7549197106223028
 186,"def main(argv=None):
     """""" Top-level argparsing; invokes subparser for all submodules. """"""
     cli = argparse.ArgumentParser(
@@ -38356,7 +38356,7 @@ def main(argv=None):
         if not os.path.exists(args.asset_dir):
             cli.error(""directory does not exist: "" + args.asset_dir)
 
-    # call the entry point for the sub",0.9092545575865444,0.8837734103418913,0.660407981141541,0.9633875901686552,0.9210526811590916,0.9795795935707204,0.6616325363261535,0.9795795935707204
+    # call the entry point for the sub",0.9092545575865444,0.8837734103418913,0.660407981141541,0.9633875901686552,0.9210526811590916,0.8965788504809855,0.6616325363261535,0.9795795935707204
 187,"def get_asset_path(custom_asset_dir=None):
     """"""
     Returns a Path object for the game assets.
@@ -38607,7 +38607,7 @@ def get_user_data_dir():
         create_if_missing=True
     ).root
 
-```",0.7132814508650487,0.6485804992752365,0.6322135396819468,0.7641325277405181,0.9237207541846562,0.9401846892541897,0.7974682774746672,0.9401846892541897
+```",0.7132814508650487,0.6485804992752365,0.6322135396819468,0.7641325277405181,0.9237207541846562,0.865860875857205,0.7974682774746672,0.9401846892541897
 188,"def interactive_browser(srcdir=None):
     """"""
     launch an interactive view for browsing the original
@@ -38991,7 +38991,7 @@ def interactive_browser(srcdir=None):
                 ""* save a slp as png:  `save_slp(data['dir/123.slp'], '/tmp/pic.png')`.\\n""),
         local=locals()
     )
-```",0.8638676363984322,0.8044323600136745,0.7802210205579312,0.8907673487598832,0.9430961257835695,0.9730118790063783,0.8528943322620761,0.9730118790063783
+```",0.8638676363984322,0.8044323600136745,0.7802210205579312,0.8907673487598832,0.9430961257835695,0.8764716429323629,0.8528943322620761,0.9730118790063783
 189,"    def save_slp(path, target, palette=None):
         """"""
         save a slp as png.
@@ -39094,7 +39094,7 @@ def save_slp(path, target, palette=None):
 
     out_path, filename = os.path.split(target)
     tex.save(Directory(out_path).root, filename)
-```",0.6928443953194057,0.7096480588916294,0.8452521435725213,0.8452521435725213,0.7427216753953226,0.9679234444416746,0.9679234444416746,0.9679234444416746
+```",0.6928443953194057,0.7096480588916294,0.8452521435725213,0.8452521435725213,0.7427216753953226,0.7857830586914571,0.9679234444416746,0.9679234444416746
 190,"def init_subparser(cli):
     """""" Initializes the parser for convert-specific args. """"""
     cli.set_defaults(entrypoint=main)
@@ -39468,7 +39468,7 @@ def init_subparser(cli):
     add_argument(
         ""--id"", type=int, default=None,
         help=""only convert files with this id (used for debugging..)"")
-```",0.5101782657421319,0.564608299258641,0.6469869825347228,0.6714445105088148,0.5185471933820716,0.6838344273341044,0.662900051502664,0.6838344273341044
+```",0.5101782657421319,0.564608299258641,0.6469869825347228,0.6714445105088148,0.5185471933820716,0.5796640258632053,0.662900051502664,0.6838344273341044
 191,"def main(args, error):
     """""" CLI entry point """"""
     del error  # unused
@@ -39662,7 +39662,7 @@ def main(args, error):
     else:
         print(""assets are up to date; no conversion is required."")
         print(""override with --force."")
-```",0.8189238839752521,0.8292972598400113,0.7217595866129224,0.7167706409763269,0.8804825225608595,0.7422224983669391,0.735691160844566,0.7422224983669391
+```",0.8189238839752521,0.8292972598400113,0.7217595866129224,0.7167706409763269,0.8804825225608595,0.8422259765971905,0.735691160844566,0.7422224983669391
 192,"def init_subparser(cli):
     """""" Initializes the parser for convert-specific args. """"""
     import argparse
@@ -39832,7 +39832,7 @@ def main():
 
 if __name__ == ""__main__"":
     main()
-```",0.5178374387301256,0.5663684263458078,0.5425096042212522,0.6303613790203068,0.6491468837441379,0.737392149983526,0.6573560442039895,0.737392149983526
+```",0.5178374387301256,0.5663684263458078,0.5425096042212522,0.6303613790203068,0.6491468837441379,0.6825889660616322,0.6573560442039895,0.737392149983526
 193,"def main(args, error):
     """""" CLI entry point for single file conversions """"""
     del error  # unused
@@ -40134,7 +40134,7 @@ def main(args, error):
     # to save as png:
     path, filename = os.path.split(args.output)
     tex.save(Directory(path).root, filename)
-```",0.743021263234062,0.7459801285204453,0.6373972670470024,0.7329753264609274,0.9698449135490881,0.9196164854410883,0.7497459783734786,0.9196164854410883
+```",0.743021263234062,0.7459801285204453,0.6373972670470024,0.7329753264609274,0.9698449135490881,0.9742395284117693,0.7497459783734786,0.9196164854410883
 194,"    def save(self, targetdir, filename, meta_formats=None):
         """"""
         Store the image data into the target directory path,
@@ -40318,7 +40318,7 @@ def save(self, targetdir, filename, meta_formats=None):
             formatter = data_formatter.DataFormatter()
             formatter.add_data(self.dump(basename))
             formatter.export(targetdir, meta_formats)
-```",0.7861489004276061,0.7850715699318258,0.681810802072691,0.8473778048978566,0.9188267685752705,0.9655944339476727,0.7946698002542869,0.9655944339476727
+```",0.7861489004276061,0.7850715699318258,0.681810802072691,0.8473778048978566,0.9188267685752705,0.9208222646135938,0.7946698002542869,0.9655944339476727
 195,"def get_config_path(custom_cfg_dir=None):
     """"""
     Locates the main configuration file by name in some searchpaths.
@@ -40557,7 +40557,7 @@ def get_config_path(args):
         result.mount(Directory(args.cfg_dir).root)
 
     return result
-```",0.7041537667029222,0.66466235294361,0.7276817252909487,0.7808899308132347,0.8642549811424033,0.977575368829949,0.795890532220729,0.977575368829949
+```",0.7041537667029222,0.66466235294361,0.7276817252909487,0.7808899308132347,0.8642549811424033,0.776523343017808,0.795890532220729,0.977575368829949
 196,"def main(args, error):
     """"""
     Makes sure that the assets have been converted,
@@ -40832,7 +40832,7 @@ conversion_required = functools.partial(conversion_required, root[""assets""])
 
 # use functools.lru_cache to cache the results of config.DEVMODE
 config.DEVMODE = functools.lru_cache(maxsize=128)(config.DEVMODE)
-```",0.9019932706803956,0.91166347002506,0.9436306157078426,0.7922022688755126,0.9281770279304747,0.8252946563122372,0.9477631886477549,0.8252946563122372
+```",0.9019932706803956,0.91166347002506,0.9436306157078426,0.7922022688755126,0.9281770279304747,0.9157960429649724,0.9477631886477549,0.8252946563122372
 197,"def get_string_resources(args):
     """""" reads the (language) string resources """"""
     from .stringresource import StringResource
@@ -41254,7 +41254,7 @@ def get_string_resources_jit(args):
                     stringres.fill_from(read_hd_language_file(langfile, lang))
 
                 count += 1
-",0.7573685939548841,0.5815869834513803,0.78687018217719,0.7815469498945744,0.7807270649151479,0.7763506375672273,0.7898563356279067,0.7763506375672273
+",0.7463795829658731,0.5925759944403912,0.7923646876716954,0.7842942026418271,0.7724853066733897,0.6102786429263888,0.8145816103531813,0.768108879325469
 198,"def get_domain_mx_list(domain):
     """"""Return a list of MX IP address for domain.""""""
     result = []
@@ -41566,7 +41566,7 @@ def get_domain_mx_list(domain):
                         else:
                             result.append((mx_domain, mx_ip))
     return result
-```",0.7393682878380801,0.5875667211018247,0.8689511901531324,0.7892883481220909,0.753680736527371,0.813140822076151,0.8686068483810948,0.813140822076151
+```",0.7354000338698261,0.5875667211018247,0.8689511901531324,0.785320094153837,0.7495823758716333,0.6031453416519146,0.8686068483810948,0.8090424614204133
 199,"    def authenticate(self, request, username=None, password=None):
         """"""Check the username/password and return a User.""""""
         host = getattr(settings, ""AUTH_SMTP_SERVER_ADDRESS"", ""localhost"")
@@ -41704,7 +41704,7 @@ def authenticate(self, username=None, password=None):
         except smtplib.SMTPException:
             return None
         return self.get_or_build_user(username)
-```",0.25,0.6296651274552612,0.6357210564615801,0.8882306771985177,0.25,0.9087593603672369,0.6534381022447213,0.9087593603672369
+```",0.25,0.6296651274552612,0.6357210564615801,0.8882306771985177,0.25,0.646042427058438,0.6534381022447213,0.9087593603672369
 200,"        def authenticate(self, *args, **kwargs):
             if self.global_params[""authentication_type""] == ""ldap"":
                 return super(LDAPBackend, self).authenticate(*args, **kwargs)
@@ -41780,4 +41780,4 @@ class LDAPBackend:
                 username=username, password=password)
         return None
 
-```",0.45614843373239733,0.48929871311134504,0.4918847019680413,0.4548445730102817,0.8269439723204988,0.8023944161477781,0.8015789216540672,0.8023944161477781
+```",0.45614843373239733,0.48929871311134504,0.4918847019680413,0.4548445730102817,0.8269439723204988,0.8190786415841083,0.8015789216540672,0.8023944161477781
